@@ -1,0 +1,124 @@
+﻿@{
+    ViewBag.Title = "Edit Partner";
+}
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>Partners <small>Edit Account</small></h1>
+            <ol class="breadcrumb">
+              <li><i class="fa fa-group"></i> Partners</li>
+              <li class="active">Edit</li>
+            </ol>
+            @*<div class="alert alert-success alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              Welcome to SB Admin by <a class="alert-link" href="http://startbootstrap.com">Start Bootstrap</a>! Feel free to use this template for your admin needs! We are using a few different plugins to handle the dynamic tables and charts, so make sure you check out the necessary documentation links provided.
+            </div>*@
+          </div>
+        </div><!-- /.row -->
+    <div class="row">
+        <div class="col-sm-12 partner">
+            <form>
+                <div class="row form-group">
+                    <div class="col-sm-12">
+                        <h2 class="green CENTER">PERSONAL INFORMATION</h2>
+                    </div>
+                    <div class="col-sm-3 form-group">
+                        <label for="name">Name*</label>
+                        @Html.TextBox("name", "", null, new { @class = "form-control", placeholder = "Put your name..." })
+                    </div>
+                    <div class="col-sm-3 form-group">
+                        <label for="lastname">Lastname*</label>
+                        @Html.TextBox("lastname", "", null, new { @class="form-control", placeholder="Put your last name..." })
+                    </div> 
+                    <div class="col-sm-1 form-group">
+                        <label for="dob">Birthday</label>
+                        @Html.TextBox("dob", "", null, new { @class = "form-control", placeholder = "MM" })
+                    </div>
+                    <div class="col-sm-1 form-group">
+                        <label for="name">&nbsp;</label>
+                        @Html.TextBox("name", "", null, new { @class = "form-control", placeholder = "DD" })
+                    </div>  
+                    <div class="col-sm-1 form-group">
+                        <label>&nbsp;</label>
+                        @Html.TextBox("name", "", null, new { @class = "form-control", placeholder = "YYYY" })
+                    </div>
+                    <div class="col-sm-3 form-group">
+                        <label for="name">Name</label>
+                        @Html.TextBox("name", "", null, new { @class = "form-control", placeholder = "Put your name..." })
+                    </div>        
+                    <div class="col-sm-6 form-group">
+                        <label for="email">E-mail</label>
+                        @Html.TextBox("email", "", null, new { @class = "form-control", placeholder = "name@domain.com" })
+                    </div>
+                    <div class="col-sm-3 form-group">
+                        <label for="pass1">Passoword*</label>
+                        @Html.TextBox("email", "", null, new { @class = "form-control", placeholder = "Put your name..." })
+                    </div>
+                    <div class="col-sm-3 form-group">
+                        <label for="pass2">Confirm Passoword*</label>
+                        @Html.TextBox("email", "", null, new { @class = "form-control", placeholder = "Put your name..." })
+                    </div>
+                </div>
+                <div class="row form-group">
+                <div class="col-sm-12">
+                    <h2 class="green CENTER">COMPANY INFORMATION</h2>
+                </div>
+                    <div class="col-sm-3">
+                        <label for="businessmode">Business*</label>
+                        <select class="form-control" id="businessmode">
+                            <option>Resseler</option>
+                            <option>Distributor</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="companyname">Company Name*</label>
+                        @Html.TextBox("companyname", "", null, new { @class="form-control", placeholder="YOUR COMPANY" })
+                    </div> 
+                    <div class="col-sm-3">
+                         <label for="texid">Tax ID</label>
+                        @Html.TextBox("taxid", "", null, new { @class="form-control", placeholder="" })
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="name">Phone*</label>
+                        @Html.TextBox("phone", "", null, new { @class="form-control", placeholder="DD" })
+                    </div>  
+                    <div class="col-sm-6">
+                        <label for="address">Address</label>
+                        @Html.TextBox("address", "", null, new { @class="form-control", placeholder="YYYY" })
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="zipcode">Zip Code*</label>
+                        @Html.TextBox("zipcode", "", null, new { @class="form-control", placeholder="Put your name..." })
+                    </div>        
+                    <div class="col-sm-6">
+                        <label for="city">City</label>
+                        @Html.TextBox("city", "", null, new { @class="form-control", placeholder="name@domain.com" })
+                    </div>
+                    <div class="col-sm-3 ">
+                        <label for="state">State Province*</label>
+                        @Html.TextBox("state", "", null, new { @class="form-control", placeholder="Put your name..." })
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="pass2">&nbsp;</label>
+                        @Html.TextBox("ActivateAccount", "Activate account", null, new { @class="form-control btn btn-success", placeholder="Put your name...", type="button" })
+                        
+                    </div>
+                    </div>
+                <div class="row">
+                    <div class="col-sm-3 pull-right">
+                        <label for="pass2">&nbsp;</label>
+                        @Html.TextBox("email", "SAVE", null, new { @class="form-control btn btn-warning", placeholder="Put your name...", type="button" })
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#menu-dashboard").removeClass("active");
+            $("#menu-partners").addClass("open");
+        });
+
+</script>
+}

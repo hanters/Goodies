@@ -1,0 +1,148 @@
+﻿@using Web.Frooty.Models
+@using System.Web.Configuration;
+@{
+    ViewBag.Title = "Index";
+
+    frootyacai_siteEntities db = new frootyacai_siteEntities();
+
+    var News = (from a in db.tb_newPost  select a).OrderByDescending(a => a.id_newPost).ToList();
+    
+    if(News != null)
+    {
+        News = News.Skip((1 - 1) * 9).Take(9).ToList();
+    }
+
+    int cont = 0;       
+}
+<div class="container">
+    <h1 class="roundedbold yellow">NEWS</h1>
+    <div class="news boxstar row" id="container">
+
+        @foreach (var item in News)
+        {
+            <div class="col-xs-12 col-sm-4 item">
+                <a href="/New/@(item.url)">
+                    <div class="itemnew news">
+                        <h3 class="medium65 pink">@item.title</h3>
+                        @*<h4 class="green"><span id="time_@cont"></span></h4>*@
+                        <div class="thumb">
+                            <img class="mask" src="@Url.Content("~/Content/Images/mask.png")" style="background-image: url('@(WebConfigurationManager.AppSettings["News"] + item.image)')"/>
+                        </div>
+                    </div>
+                </a>
+                <input type="hidden" id="hdntime_@cont" value="@String.Format("{0:MM/dd/yyyy HH:mm:ss}", item.ts_user_cadm)" />
+            </div>
+                      
+           {
+            cont++;
+            }
+        }
+         <input type="hidden" id="cont" value="@cont" />
+    </div>
+     <input type="button" class="btn btn-pink center-block" value="MORE POSTS" id="btn" />
+</div>
+<script>
+
+    $(document).ready(function () {
+
+        for (var i = 0; i < $('#cont').val() ; i++) {
+
+            $("#time_" + i).html(timeAgo($("#hdntime_" + i).val()));
+        }
+
+        var page = 2
+        var cont = @cont
+
+        $(function () {
+
+            var $container = $('#container');
+
+            $container.isotope({
+                itemSelector: '.item'
+            });
+
+        });
+
+        $("#btn").on('click', function () {
+            $.ajax({
+                url: caminhoApp + '/News/News',
+                dataType: "json",
+                type: "POST",
+                data: { page: page },
+                success: function (data) {
+                    $(data.result).each(function () {
+
+                        //INICIAR LOAD
+                        var $newItems = $('<div class="col-xs-12 col-sm-4 item">'+
+                                            '<a href="/New/' + this.url + '">' +
+                                                '<div class="itemnew news">'+
+                                                    '<h3 class="medium65 pink">'+ this.title +'</h3>'+
+                                                    //'<h4 class="green"><span id="time_' + cont + '"></span></h4>' +
+                                                    '<div class="thumb">'+
+                                                        '<img class="mask" src="@Url.Content("~/Content/Images/mask.png")" style="background-image: url(\'' + data.path + this.image + '\')"/>' +
+                                                    '</div>'+
+                                                '</div>'+
+                                            '</a>'+
+                                            '<input type="hidden" id="hdntime_' + cont + '" value="' + formatJSONDate(this.ts_user_cadm) + '" />' +
+                                        '</div>');
+
+                        $('#container').isotope('insert', $newItems);
+
+
+                        $("#time_" + cont).html(timeAgo($("#hdntime_" + cont).val()));
+
+                        cont++;
+                        //FINALIZAR LOAD
+                    });
+
+                },
+                error: function (error) {
+                }
+            });
+
+            page++;
+        });    
+    });
+
+    function timeAgo(date_str) {
+
+        date_str = date_str.replace('+0000', 'Z');
+        var time_formats = [
+            [60, 'just now', 1],
+            [120, '1 minute ago', '1 minute from now'],
+            [3600, 'minutes', 60],
+            [7200, '1 hour ago', '1 hour from now'],
+            [86400, 'hours', 3600],
+            [172800, 'yesterday', 'tomorrow'],
+            [604800, 'days', 86400],
+            [1209600, 'last week', 'next week'],
+            [2419200, 'weeks', 604800],
+            [4838400, 'last month', 'next month'],
+            [29030400, 'months', 2419200],
+            [58060800, 'last year', 'next year'],
+            [2903040000, 'years', 29030400],
+            [5806080000, 'last century', 'next century'],
+            [58060800000, 'centuries', 2903040000]
+        ];
+        var time = ('' + date_str).replace(/-/g, "/").replace(/[TZ]/g, " ").replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+        if (time.substr(time.length - 4, 1) == ".") time = time.substr(0, time.length - 4);
+        var seconds = (new Date - new Date(time)) / 1000;
+        var token = 'ago', list_choice = 1;
+        if (seconds < 0) {
+            seconds = Math.abs(seconds);
+            token = 'from now';
+            list_choice = 2;
+        }
+        var i = 0, format;
+        while (format = time_formats[i++])
+            if (seconds < format[0]) {
+                if (typeof format[2] == 'string')
+                    return format[list_choice];
+                else
+                    return Math.floor(seconds / format[2]) + ' ' + format[1] + ' ' + token;
+            }
+        return time;
+    }
+
+</script>
+

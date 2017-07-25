@@ -1,0 +1,92 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Frooty Panel Control</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="@Url.Content("~/Content/css/bootstrap.css")" rel="stylesheet">
+
+        <!-- Add custom CSS here -->
+        <link href="@Url.Content("~/Content/css/sb-admin.css")" rel="stylesheet">
+        <link rel="stylesheet" href="@Url.Content("~/Content/css/font-awesome.min.css")">
+        <link rel="stylesheet" href="@Url.Content("~/Content/Fonts/fonts.css")">
+        <link rel="stylesheet" href="@Url.Content("~/Content/Css/Custom.css")">
+        <link rel="stylesheet" href="@Url.Content("~/Content/Css/bootstrap-switch.min.css")" rel="stylesheet">
+        <link rel="stylesheet" href="@Url.Content("~/Content/Css/fileinput.min.css")" rel="stylesheet">
+        <link href="~/Content/css/modal.css" rel="stylesheet" />
+    
+        <!-- Page Specific CSS -->
+        <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
+        @*<link rel="stylesheet" href="//cdn.datatables.net/1.10.1/css/jquery.dataTables.css">*@
+        <link rel="stylesheet" href="//cdn.datatables.net/plug-ins/be7019ee387/integration/bootstrap/3/dataTables.bootstrap.css">
+        <link rel="stylesheet" href="@Url.Content("~/Content/css/summernote.css")" />
+    </head>
+    <body>
+        <div class="fluid-container">
+            <div class="container">
+                <form id="formLogin" action="@Url.Action("Access", "Login")" method="post" onsubmit="return false;">
+                    @{Html.RenderPartial("Error");}
+                <div class="row">
+                    <div class="col-md-4 col-xs-10 col-md-offset-4 col-xs-offset-1 ">
+                        <div class="panel panel-purple">
+                            <div class="panel-heading"><h1 class="tipography">Goodies Times</h1></div>
+                            <div class="panel-body">
+
+                                <div class="form-group">
+                                    <label for="login">User</label>
+                                    <input type="text" id="login" name="login" class="form-control" required/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pass">Password</label>
+                                    <input type="password" id="pass" name="pass" class="form-control" required/>
+                                </div>
+                                <button id="btn_entrar" class="btn btn-primary center-block">ACCESS</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+            
+        </div>
+        <script>
+            var caminhoApp = '@HttpContext.Current.Request.ApplicationPath';
+            if (caminhoApp == '/') {
+                caminhoApp = "";
+            }
+        </script>
+        <!-- JavaScript -->
+        <script src="@Url.Content("~/Scripts/jquery-1.10.2.js")"></script>
+        <script src="@Url.Content("~/Scripts/bootstrap.js")"></script>
+       @* <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>*@
+       @* <script src="~/Scripts/jquery.validate.js"></script>*@
+        
+        <script src="@Url.Content("~/Scripts/jquery.hotkeys.js")"></script>
+        <script src="@Url.Content("~/Scripts/Global.js")"></script>
+        <!-- Page Specific Plugins -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+        <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
+        <script src="//cdn.datatables.net/1.10.1/js/jquery.dataTables.js"></script>
+        <script src="@Url.Content("~/Scripts/summernote.min.js")"></script>
+        <script src="//cdn.datatables.net/plug-ins/be7019ee387/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+        <script src="@Url.Content("~/Scripts/bootstrap-switch.min.js")"></script>
+        <script src="@Url.Content("~/Scripts/fileinput.min.js")"></script>     
+        <script src="~/Scripts/login/Login.js"></script>
+        <div id="boxes">
+            <div id="load" class="window">
+                <center><img src="~/Content/Images/loader.gif" alt="Wait" /><br />Wait...</center>
+            </div>
+
+            <div id="masks"></div>
+        </div>
+    </body>
+</html>

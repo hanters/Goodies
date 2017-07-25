@@ -1,0 +1,38 @@
+<table width="600" cellpadding="0" cellspacing="0" align="center" style="margin: 0 auto">
+    <tr>
+        <td>
+            <img src="%ImagemHeadEmail%" style="display: block; border: 0;" /></td>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><strong style="color: #b9d047; font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 20px;">Hello %NAME% %LASTNAME%,</strong></p>
+            <strong style="color: #612977; font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 17px;">
+                Thank you for your purchase.<br /> Your invoice will be processed through Paypal.
+            </strong>
+            <p style="color: #000000; font-family: Arial, Helvetica, sans-serif; font-size: 14px;">
+                Here is the break down of your order:
+            </p>
+            <table id="cart" class="table responsive dt-responsive no-footer dtr-inline dataTable" cellspacing="0" width="100%" role="grid" aria-describedby="cart_info" style="width: 100%; border: 1px solid #CCC">
+                <thead>
+                    <tr role="row">
+                        <th style="border-bottom: 1px solid #CCC; color: #000">Product</th>
+                        <th style="border-bottom: 1px solid #CCC; color: #000">Amount</th>
+                        <th style="border-bottom: 1px solid #CCC; color: #000">Price</th>
+                        <th style="border-bottom: 1px solid #CCC; color: #000">Total</th>
+                    </tr>
+                </thead>
+
+				<tbody>
+                   %TIPO%
+                </tbody>
+            </table>
+            <p style="color: #000000; font-family: Arial, Helvetica, sans-serif; font-size: 14px;">Please contact us, in case you need any help.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+             <img src="%ImagemFooterEmail%" style="display: block; border: 0;" />
+        </td>
+    </tr>
+</table>

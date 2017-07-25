@@ -1,0 +1,185 @@
+﻿@model IEnumerable<Web.Frooty.Models.tb_business>
+<div class="container">
+
+
+    @*<h1><span class="pink medium65">NEW ACCOUNT</span></h1>*@
+    <div class="row">
+        <div class="col-sm-12 partner">
+            <div class="pink" id="msg" style="text-align:center;"></div>
+            <form id="form-partners" onsubmit="return false;">
+                <div class="row form-group">
+                    <div class="col-sm-3">
+                        <label for="name">Name*</label>
+                        @Html.TextBox("name_", "", null, new { @class = "form-control", placeholder = "Put your name..." })
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="lastname">Last Name*</label>
+                        @Html.TextBox("lastname_", "", null, new { @class = "form-control", placeholder = "Put your last name..." })
+                    </div>
+                    <div class="col-sm-1">
+                        <label for="dob">Birthday</label>
+                        @Html.TextBox("month_", "", null, new { @class = "form-control", placeholder = "MM" })
+                    </div>
+                    <div class="col-sm-1">
+                        <label for="name">&nbsp;</label>
+                        @Html.TextBox("day_", "", null, new { @class = "form-control", placeholder = "DD" })
+                    </div>
+                    <div class="col-sm-1">
+                        <label>&nbsp;</label>
+                        @Html.TextBox("year_", "", null, new { @class = "form-control", placeholder = "YYYY" })
+                    </div>
+                    @*<div class="col-sm-3">
+                            <label for="name">Name</label>
+                            @Html.TextBox("name", "", null, new { @class="form-control", placeholder="Put your name..." })
+                        </div>       *@
+                    <div class="col-sm-6">
+                        <label for="email">E-mail*</label>
+                        @Html.TextBox("email_c", "", null, new { @class = "form-control", placeholder = "name@domain.com" })
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="pass1">Password*</label>
+                        @Html.Password("password_P", null, new { @class = "form-control", placeholder = "*******" })
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="pass2">Confirm Password*</label>
+                        @Html.Password("passwordConfirn_P", null, new { @class = "form-control", placeholder = "*******" })
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sm-12">
+                        <h2 class="green CENTER" style="padding-left: 0;">COMPANY INFORMATION</h2>
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="businessmode">Business*</label>
+                        @Html.DropDownList("id_business_", new SelectList(Model, "id_business", "business"), "Selecione", new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="companyname">Company Name*</label>
+                        @Html.TextBox("company_", "", null, new { @class = "form-control", placeholder = "YOUR COMPANY" })
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="texid">Tax ID</label>
+                        @Html.TextBox("taxID_", "", null, new { @class = "form-control", placeholder = "" })
+                    </div>
+                    <div class="col-sm-6 ">
+                        <label>Country*</label>
+                        @Html.DropDownList("id_country", null, "Select Country", new { @class = "form-control", onchange = "ListCountry(this.value,true)" })
+                    </div>
+                    <div class="col-sm-6 ">
+                        <label for="state">State Province*</label>
+                        <select name="state" id="state_" class="form-control">
+                            <option value="" selected="selected">Select a State</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="city">City*</label>
+                        @Html.TextBox("city_", "", null, new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="address">Address*</label>
+                        @Html.TextBox("address_", "", null, new { @class = "form-control", placeholder = "Avenue..." })
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="zipcode">ZipCode*</label>
+                        @Html.TextBox("zipCode_", "", null, new { @class = "form-control", placeholder = "Enter the Code" })
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="name">Phone*</label>
+                        @Html.TextBox("phone_", "", null, new { @class = "form-control", placeholder = "Number" })
+                    </div>
+                    
+                    <div class="col-sm-3">
+                        <label for="pass2">&nbsp;</label>
+                        @Html.TextBox("save", "REGISTER ACCOUNT", null, new { @class = "form-control btn btn-success btn-pink", placeholder = "Put your name...", type = "button" })
+                    </div>
+                </div>
+                <input type="hidden" id="id_partners" />
+            </form>
+        </div>
+    </div>
+    @*<h1><span class="pink medium65">BE A</span><span class="pink Heavy85"> PARTNER</span></h1>*@
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 hidden-xs">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3>@*<span class="yellow">ARE YOU INTERESTED IN OUR PRODUCTS?</span>*@ <br /><span class="yellow">REGISTER AND APPLY NOW FOR A SAMPLE</span></h3>
+                </div>
+                <div class="col-xs-4 col-sm-4">
+                    <div class="col-sm-12 partner">
+                        <img src="@Url.Content("~/Content/Images/beapartner_01.png")" class="img-responsive center-block" />
+                        <h1 class="green">REGISTER AN <br />  ACCOUNT</h1>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-sm-4">
+                    <div class="col-sm-12 partner">
+                        <img src="@Url.Content("~/Content/Images/beapartner_02.png")" class="img-responsive center-block" />
+                        <h1 class="green">TALK TO OUR <br /> SALES TEAM</h1>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-sm-4">
+                    <div class="col-sm-12 partner">
+                        <img src="@Url.Content("~/Content/Images/beapartner_03.png")" class="img-responsive center-block" />
+                        <h1 class="green">CHECK OUR <br /> RATES</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*<div class="col-xs-12 col-sm-6">
+            <div class="modal frootystyle" id="LoginModal" style="display: block; overflow: auto; position: static">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+
+                            <h4 class="modal-title">LOGIN</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="loginbox">
+                                <form method="post" id="loginform">
+                                    <div class="form-group">
+                                        <label>E-mail</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Password</label>
+                                        <input type="password" class="form-control" />
+                                    </div>
+                                    <div class="actionlogin">
+                                        <a href="#" class="forget"><strong>Forgot the password?</strong></a>
+                                        <button type="button" class="btn btn-success pull-right">Connect</button>
+                                    </div>
+                                </form>
+                                <form method="post" id="recoveryform" style="display: none;">
+                                    <div class="form-group">
+                                        <label>E-mail</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="actionlogin">
+                                        <a href="#" class="reminded"><strong>I know the pass.</strong></a>
+                                        <button type="button" class="btn btn-success pull-right">Send</button>
+                                    </div>
+                                </form>
+                                <script>
+                                    $(document).ready(function () {
+                                        $(".forget").click(function () {
+                                            $("#loginform").hide();
+                                            $("#recoveryform").show();
+                                            $("#LoginModal.frootystyle .modal-header h4").html("Recovery Password");
+                                        });
+
+                                        $(".reminded").click(function () {
+                                            $("#recoveryform").hide();
+                                            $("#loginform").show();
+                                            $("#LoginModal.frootystyle .modal-header h4").html("LOGIN");
+                                        });
+                                    });
+                                </script>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div>
+        </div>*@
+    </div>
+</div>
+<script src="~/Scripts/Partners/Partners.js"></script>

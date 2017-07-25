@@ -1,0 +1,32 @@
+﻿@using Web.Frooty.Models
+@using System.Web.Configuration;
+@{
+    ViewBag.Title = "Page";
+    ViewBag.Title = "Index";
+
+    string title = ViewBag.name;
+    
+    frootyacai_siteEntities db = new frootyacai_siteEntities();
+    
+    var Recipes = (from a in db.tb_recipes where a.url == title select a).OrderByDescending(a => a.id_recipes).Take(1).FirstOrDefault();  
+}
+<div class="container">
+    <div class="row">
+        <div class="frooty-inc col-xs-12 col-sm-8">
+            <ul class="menu-frooty">
+                <li><h1 class="pink"><span class="medium65"></span><span class="Heavy85">@(Recipes != null ? Recipes.title:"" )</span></h1></li>
+            </ul>
+            <div id="newscontent">
+                <p>
+                   @(Recipes != null ? Recipes.introduction:"" )
+                </p>
+                <div class="bg-dark">
+                     <img class="mask" src="@(WebConfigurationManager.AppSettings["Recipes"] + ( Recipes != null ? Recipes.image : "")  )"/>
+                   @( Recipes != null ? new HtmlString(Recipes.content) : new HtmlString(""))                   
+                </div>
+            </div>
+        </div>
+        @Html.Partial("~/Views/Shared/_PartialSideBar.cshtml")
+    </div>
+</div>
+

@@ -1,0 +1,390 @@
+
+a {color:#333; text-decoration:none}
+a:hover {color:#ccc; text-decoration:none}
+
+input, textarea, select {
+  border: 1px solid #CCCCCC;
+}
+
+#modal {
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+}
+
+#mask {
+  position:fixed;
+  left:0;
+  top:0;
+  right: 0;
+  bottom: 0;
+  z-index:1000;
+  background-color:Silver;
+  display:none;
+}
+
+#masks {
+  position:fixed;
+  left:0;
+  right: 0;
+  bottom: 0;
+  top:0;
+  z-index:9000;
+  background-color:Silver;
+  display:none;
+}
+
+#boxes #load {
+  width:128px; 
+  height:15px;
+  padding:0px;
+  color:Black;
+}
+  
+#boxes .window {
+  position:absolute;
+  left:0;
+  top:0;
+  width:440px;
+  height:200px;
+  display:none;
+  z-index:9999;
+  padding:20px;
+}
+
+#boxes #dialog {
+  width:375px; 
+  height:203px;
+  padding:10px;
+  background-color:#ffffff;
+}
+
+#boxes #dialog1 {
+  width:375px; 
+  height:203px;
+}
+
+#dialog1 .d-header {
+  background:url(login-header.png) no-repeat 0 0 transparent; 
+  width:375px; 
+  height:150px;
+}
+
+#dialog1 .d-header input {
+  position:relative;
+  top:60px;
+  left:100px;
+  border:3px solid #cccccc;
+  height:22px;
+  width:200px;
+  font-size:15px;
+  padding:5px;
+  margin-top:4px;
+}
+
+#dialog1 .d-blank {
+  float:left;
+  background:url(login-blank.png) no-repeat 0 0 transparent; 
+  width:267px; 
+  height:53px;
+}
+
+#dialog1 .d-login {
+  float:left;
+  width:108px; 
+  height:53px;
+}
+
+#boxes #dialog2 {
+  background:url(notice.png) no-repeat 0 0 transparent; 
+  width:326px; 
+  height:229px;
+  padding:50px 0 20px 25px;
+}
+
+#boxe {
+    position: absolute relative;
+    top: 0;
+    height: 50px;
+}
+
+    /*#boxe > div {
+        margin-bottom: 50px;
+    }*/
+
+#boxes #CadCliente {
+  width:600px; 
+  height:450px;
+  padding:3px;
+  background-color:#ffffff;
+  vertical-align:middle;
+  border-radius: 9px; /* CSS 3 */
+  -o-border-radius: 9px; /* Opera */
+  -icab-border-radius: 9px; /* iCab */
+  -khtml-border-radius: 9px; /* Konqueror */
+  -moz-border-radius: 9px; /* Firefox */
+  -webkit-border-radius: 9px; /* Safari */
+}
+
+#boxe #Cliente {
+  width:700px; 
+  height:700px;
+  padding:3px;
+  background-color:#ffffff;
+  vertical-align:middle;
+  border-radius: 9px; /* CSS 3 */
+  -o-border-radius: 9px; /* Opera */
+  -icab-border-radius: 9px; /* iCab */
+  -khtml-border-radius: 9px; /* Konqueror */
+  -moz-border-radius: 9px; /* Firefox */
+  -webkit-border-radius: 9px; /* Safari */
+}
+
+#boxe #Usuario {
+  width:690px; 
+  height:500px;
+  padding:3px;
+  background-color:#ffffff;
+  vertical-align:middle;
+  border-radius: 9px; /* CSS 3 */
+  -o-border-radius: 9px; /* Opera */
+  -icab-border-radius: 9px; /* iCab */
+  -khtml-border-radius: 9px; /* Konqueror */
+  -moz-border-radius: 9px; /* Firefox */
+  -webkit-border-radius: 9px; /* Safari */
+}
+
+#boxe #Setores {
+  width:600px; 
+  height:200px;
+  padding:3px;
+  background-color:#ffffff;
+  vertical-align:middle;
+  border-radius: 9px; /* CSS 3 */
+  -o-border-radius: 9px; /* Opera */
+  -icab-border-radius: 9px; /* iCab */
+  -khtml-border-radius: 9px; /* Konqueror */
+  -moz-border-radius: 9px; /* Firefox */
+  -webkit-border-radius: 9px; /* Safari */
+}
+
+#boxe #Departamentos {
+  width:600px; 
+  height:300px;
+  padding:3px;
+  background-color:#ffffff;
+  vertical-align:middle;
+  border-radius: 9px; /* CSS 3 */
+  -o-border-radius: 9px; /* Opera */
+  -icab-border-radius: 9px; /* iCab */
+  -khtml-border-radius: 9px; /* Konqueror */
+  -moz-border-radius: 9px; /* Firefox */
+  -webkit-border-radius: 9px; /* Safari */
+}
+
+#boxe #Contrato {
+  width:750px; 
+  height:750px;
+  padding:3px;
+  background-color:#ffffff;
+  vertical-align:middle;
+  border-radius: 9px; /* CSS 3 */
+  -o-border-radius: 9px; /* Opera */
+  -icab-border-radius: 9px; /* iCab */
+  -khtml-border-radius: 9px; /* Konqueror */
+  -moz-border-radius: 9px; /* Firefox */
+  -webkit-border-radius: 9px; /* Safari */
+}
+
+#boxe #Impostos {
+  width:200px; 
+  height:200px;
+  padding:3px;
+  background-color:#ffffff;
+  vertical-align:middle;
+  border-radius: 9px; /* CSS 3 */
+  -o-border-radius: 9px; /* Opera */
+  -icab-border-radius: 9px; /* iCab */
+  -khtml-border-radius: 9px; /* Konqueror */
+  -moz-border-radius: 9px; /* Firefox */
+  -webkit-border-radius: 9px; /* Safari */
+}
+
+#boxe #CentroCusto {
+  width:600px; 
+  height:500px;
+  padding:3px;
+  background-color:#ffffff;
+  vertical-align:middle;
+  border-radius: 9px; /* CSS 3 */
+  -o-border-radius: 9px; /* Opera */
+  -icab-border-radius: 9px; /* iCab */
+  -khtml-border-radius: 9px; /* Konqueror */
+  -moz-border-radius: 9px; /* Firefox */
+  -webkit-border-radius: 9px; /* Safari */
+}
+
+#boxe #Departamento {
+  width:600px; 
+  height:450px;
+  padding:3px;
+  background-color:#ffffff;
+  vertical-align:middle;
+  border-radius: 9px; /* CSS 3 */
+  -o-border-radius: 9px; /* Opera */
+  -icab-border-radius: 9px; /* iCab */
+  -khtml-border-radius: 9px; /* Konqueror */
+  -moz-border-radius: 9px; /* Firefox */
+  -webkit-border-radius: 9px; /* Safari */
+}
+
+#boxe #Emitir {
+  width:750px; 
+  height:750px;
+  padding:3px;
+  background-color:#ffffff;
+  vertical-align:middle;
+  border-radius: 9px; /* CSS 3 */
+  -o-border-radius: 9px; /* Opera */
+  -icab-border-radius: 9px; /* iCab */
+  -khtml-border-radius: 9px; /* Konqueror */
+  -moz-border-radius: 9px; /* Firefox */
+  -webkit-border-radius: 9px; /* Safari */
+}
+
+
+#boxe #AvisoEmitir {
+  width:750px; 
+  height:750px;
+  /*top: 1%;*/
+  /*margin-top: -375px;*/
+  padding:3px;
+  background-color:#ffffff;
+  vertical-align:middle;
+  border-radius: 9px; /* CSS 3 */
+  -o-border-radius: 9px; /* Opera */
+  -icab-border-radius: 9px; /* iCab */
+  -khtml-border-radius: 9px; /* Konqueror */
+  -moz-border-radius: 9px; /* Firefox */
+  -webkit-border-radius: 9px; /* Safari */
+}
+
+#boxe #Servicos {
+  width:600px; 
+  height:200px;
+  padding:3px;
+  background-color:#ffffff;
+  vertical-align:middle;
+  border-radius: 9px; /* CSS 3 */
+  -o-border-radius: 9px; /* Opera */
+  -icab-border-radius: 9px; /* iCab */
+  -khtml-border-radius: 9px; /* Konqueror */
+  -moz-border-radius: 9px; /* Firefox */
+  -webkit-border-radius: 9px; /* Safari */
+}
+
+#boxe #Impostos {
+  width:600px; 
+  height:580px;
+  padding:3px;
+  background-color:#ffffff;
+  vertical-align:middle;
+  border-radius: 9px; /* CSS 3 */
+  -o-border-radius: 9px; /* Opera */
+  -icab-border-radius: 9px; /* iCab */
+  -khtml-border-radius: 9px; /* Konqueror */
+  -moz-border-radius: 9px; /* Firefox */
+  -webkit-border-radius: 9px; /* Safari */
+}
+
+#boxe #NotaFiscal {
+  width:700px; 
+  height:700px;
+  padding:3px;
+  background-color:#ffffff;
+  vertical-align:middle;
+  border-radius: 9px; /* CSS 3 */
+  -o-border-radius: 9px; /* Opera */
+  -icab-border-radius: 9px; /* iCab */
+  -khtml-border-radius: 9px; /* Konqueror */
+  -moz-border-radius: 9px; /* Firefox */
+  -webkit-border-radius: 9px; /* Safari */
+}
+
+#boxe #CongImpostos {
+  width:600px; 
+  height:180px;
+  padding:3px;
+  background-color:#ffffff;
+  vertical-align:middle;
+  border-radius: 9px; /* CSS 3 */
+  -o-border-radius: 9px; /* Opera */
+  -icab-border-radius: 9px; /* iCab */
+  -khtml-border-radius: 9px; /* Konqueror */
+  -moz-border-radius: 9px; /* Firefox */
+  -webkit-border-radius: 9px; /* Safari */
+}
+
+#boxe #apontamento {
+  width:800px; 
+  height:400px;
+  padding:3px;
+  background-color:#ffffff;
+  vertical-align:middle;
+  border-radius: 9px; /* CSS 3 */
+  -o-border-radius: 9px; /* Opera */
+  -icab-border-radius: 9px; /* iCab */
+  -khtml-border-radius: 9px; /* Konqueror */
+  -moz-border-radius: 9px; /* Firefox */
+  -webkit-border-radius: 9px; /* Safari */
+}
+
+#boxe #TrocarSenha {
+
+   width:600px; 
+  height:300px;
+  padding:3px;
+  background-color:#ffffff;
+  vertical-align:middle;
+  border-radius: 9px; /* CSS 3 */
+  -o-border-radius: 9px; /* Opera */
+  -icab-border-radius: 9px; /* iCab */
+  -khtml-border-radius: 9px; /* Konqueror */
+  -moz-border-radius: 9px; /* Firefox */
+  -webkit-border-radius: 9px; /* Safari */
+
+}
+
+
+#boxe .window {
+  position:absolute;
+  left:0;
+  top:0;
+  width:440px;
+  height:200px;
+  display:none;
+  z-index:9000;
+  padding:20px;
+}
+
+
+    
+.maps
+{
+  left:0;
+  top:0;
+}
+
+.remove
+{
+  left:0;
+  top:0;
+}
+
+.close{}
+
+
+

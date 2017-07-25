@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\Rodrigo\Desktop\GoodTimes</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>02/03/2015 08:32:26</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>02/03/2015 08:32:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>06/19/2017 14:55:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>06/19/2017 14:55:58</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>06/19/2017 14:55:52</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Deployment.dll">
+      <publishTime>06/19/2017 14:55:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.dll">
+      <publishTime>06/19/2017 14:55:56</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Razor.dll">
+      <publishTime>06/19/2017 14:55:56</publishTime>
+    </File>
+    <File Include="bin/Web.Goodie.Time.dll">
+      <publishTime>03/07/2017 16:12:32</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>06/19/2017 14:56:40</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>06/19/2017 14:56:40</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap-modal.css">
+      <publishTime>06/19/2017 17:47:50</publishTime>
+    </File>
+    <File Include="Content/css/Global.css">
+      <publishTime>06/21/2017 11:43:48</publishTime>
+    </File>
+    <File Include="Content/css/modal.css">
+      <publishTime>06/19/2017 17:47:50</publishTime>
+    </File>
+    <File Include="Content/css/style - Copia.css">
+      <publishTime>06/19/2017 14:56:38</publishTime>
+    </File>
+    <File Include="Content/css/style.css">
+      <publishTime>06/19/2017 14:56:38</publishTime>
+    </File>
+    <File Include="Content/fonts/SaveurSans-Bold.otf">
+      <publishTime>06/19/2017 14:56:38</publishTime>
+    </File>
+    <File Include="Content/fonts/SaveurSans-Light.otf">
+      <publishTime>06/19/2017 14:56:38</publishTime>
+    </File>
+    <File Include="Content/fonts/SaveurSans-Regular.otf">
+      <publishTime>06/19/2017 14:56:38</publishTime>
+    </File>
+    <File Include="Content/fonts/SaveurSans-Semi-bold.otf">
+      <publishTime>06/19/2017 14:56:38</publishTime>
+    </File>
+    <File Include="Content/img/banner.png">
+      <publishTime>06/19/2017 14:56:40</publishTime>
+    </File>
+    <File Include="Content/img/bg-carrosse-brand-2.png">
+      <publishTime>06/19/2017 14:56:40</publishTime>
+    </File>
+    <File Include="Content/img/bg-carrosse-brand.png">
+      <publishTime>06/19/2017 14:56:40</publishTime>
+    </File>
+    <File Include="Content/img/bg-retangulo-footer.png">
+      <publishTime>06/19/2017 14:56:38</publishTime>
+    </File>
+    <File Include="Content/img/bg-site.png">
+      <publishTime>06/19/2017 14:56:40</publishTime>
+    </File>
+    <File Include="Content/img/bg-site2.png">
+      <publishTime>06/19/2017 14:56:40</publishTime>
+    </File>
+    <File Include="Content/img/bola.png">
+      <publishTime>06/19/2017 14:56:38</publishTime>
+    </File>
+    <File Include="Content/img/brand-logo.png">
+      <publishTime>06/19/2017 14:56:38</publishTime>
+    </File>
+    <File Include="Content/img/diamante-teste.png">
+      <publishTime>06/19/2017 14:56:38</publishTime>
+    </File>
+    <File Include="Content/img/diamante.png">
+      <publishTime>06/19/2017 14:56:38</publishTime>
+    </File>
+    <File Include="Content/img/ellipse-brands.png">
+      <publishTime>06/19/2017 14:56:38</publishTime>
+    </File>
+    <File Include="Content/img/estrela.png">
+      <publishTime>06/19/2017 14:56:38</publishTime>
+    </File>
+    <File Include="Content/img/frooty logo smaller.png">
+      <publishTime>06/19/2017 14:56:40</publishTime>
+    </File>
+    <File Include="Content/img/frooty logo.png">
+      <publishTime>06/19/2017 14:56:40</publishTime>
+    </File>
+    <File Include="Content/img/fundo-azul.png">
+      <publishTime>06/19/2017 14:56:38</publishTime>
+    </File>
+    <File Include="Content/img/fundo-banner.png">
+      <publishTime>06/19/2017 14:56:40</publishTime>
+    </File>
+    <File Include="Content/img/fundo-banner2.png">
+      <publishTime>06/19/2017 14:56:40</publishTime>
+    </File>
+    <File Include="Content/img/fundo-feature.png">
+      <publishTime>06/19/2017 14:56:38</publishTime>
+    </File>
+    <File Include="Content/img/fundo-header.png">
+      <publishTime>06/19/2017 14:56:40</publishTime>
+    </File>
+    <File Include="Content/img/fundo-instagram.png">
+      <publishTime>06/19/2017 14:56:38</publishTime>
+    </File>
+    <File Include="Content/img/fundo-texto-brands.png">
+      <publishTime>06/19/2017 14:56:38</publishTime>
+    </File>
+    <File Include="Content/img/fundo-verde.png">
+      <publishTime>06/19/2017 14:56:40</publishTime>
+    </File>
+    <File Include="Content/img/fundo-video.png">
+      <publishTime>06/19/2017 14:56:38</publishTime>
+    </File>
+    <File Include="Content/img/icon-instagram.png">
+      <publishTime>06/19/2017 14:56:38</publishTime>
+    </File>
+    <File Include="Content/img/loader.gif">
+      <publishTime>06/20/2017 12:23:06</publishTime>
+    </File>
+    <File Include="Content/img/logo.png">
+      <publishTime>06/19/2017 14:56:40</publishTime>
+    </File>
+    <File Include="Content/img/menu-hover.png">
+      <publishTime>06/19/2017 14:56:40</publishTime>
+    </File>
+    <File Include="Content/img/planta-header.png">
+      <publishTime>06/19/2017 14:56:38</publishTime>
+    </File>
+    <File Include="Content/img/seta-direita.png">
+      <publishTime>06/19/2017 14:56:38</publishTime>
+    </File>
+    <File Include="Content/img/seta-esquerda.png">
+      <publishTime>06/19/2017 14:56:38</publishTime>
+    </File>
+    <File Include="Content/img/sombra-diamante.png">
+      <publishTime>06/19/2017 14:56:38</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>06/19/2017 14:56:40</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>06/19/2017 14:56:52</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>06/19/2017 14:56:52</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>06/19/2017 14:56:52</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>06/19/2017 14:56:52</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>06/19/2017 14:55:50</publishTime>
+    </File>
+    <File Include="Models/Model1.edmx.diagram">
+      <publishTime>06/22/2017 11:41:10</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>06/22/2017 11:43:18</publishTime>
+    </File>
+    <File Include="Scripts/bootbox.min.js">
+      <publishTime>06/19/2017 17:51:18</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-datepicker.js">
+      <publishTime>06/19/2017 16:18:04</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-switch.min.js">
+      <publishTime>06/19/2017 16:18:04</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>06/19/2017 14:57:04</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>06/19/2017 14:57:04</publishTime>
+    </File>
+    <File Include="Scripts/Default/script.js">
+      <publishTime>06/19/2017 14:57:04</publishTime>
+    </File>
+    <File Include="Scripts/fileinput.min.js">
+      <publishTime>06/19/2017 16:18:04</publishTime>
+    </File>
+    <File Include="Scripts/Global.js">
+      <publishTime>06/22/2017 14:16:52</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>06/19/2017 14:57:04</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>06/19/2017 14:57:04</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>06/19/2017 14:57:04</publishTime>
+    </File>
+    <File Include="Scripts/jquery.hotkeys.js">
+      <publishTime>06/19/2017 16:18:04</publishTime>
+    </File>
+    <File Include="Scripts/jquery.maskedinput.min.js">
+      <publishTime>06/19/2017 16:18:04</publishTime>
+    </File>
+    <File Include="Scripts/jquery.maskMoney.js">
+      <publishTime>06/19/2017 16:18:04</publishTime>
+    </File>
+    <File Include="Scripts/jquery.min.js">
+      <publishTime>06/19/2017 16:18:04</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.js">
+      <publishTime>06/19/2017 16:18:04</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.min.js">
+      <publishTime>06/19/2017 16:18:04</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>06/19/2017 16:18:04</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>06/19/2017 16:18:04</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>06/19/2017 16:18:04</publishTime>
+    </File>
+    <File Include="Scripts/knockout-2.1.0.debug.js">
+      <publishTime>06/19/2017 16:18:04</publishTime>
+    </File>
+    <File Include="Scripts/knockout-2.1.0.js">
+      <publishTime>06/19/2017 16:18:04</publishTime>
+    </File>
+    <File Include="Scripts/Login/login.js">
+      <publishTime>06/21/2017 10:39:48</publishTime>
+    </File>
+    <File Include="Scripts/Login/loginDefalt.js">
+      <publishTime>06/21/2017 11:22:14</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.5.3.js">
+      <publishTime>06/19/2017 16:18:04</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>06/19/2017 14:57:04</publishTime>
+    </File>
+    <File Include="Scripts/Shop/index.js">
+      <publishTime>03/07/2017 16:09:06</publishTime>
+    </File>
+    <File Include="Scripts/slick/ajax-loader.gif">
+      <publishTime>06/19/2017 14:57:06</publishTime>
+    </File>
+    <File Include="Scripts/slick/config.rb">
+      <publishTime>06/19/2017 14:57:06</publishTime>
+    </File>
+    <File Include="Scripts/slick/fonts/slick.eot">
+      <publishTime>06/19/2017 14:57:06</publishTime>
+    </File>
+    <File Include="Scripts/slick/fonts/slick.svg">
+      <publishTime>06/19/2017 14:57:06</publishTime>
+    </File>
+    <File Include="Scripts/slick/fonts/slick.ttf">
+      <publishTime>06/19/2017 14:57:06</publishTime>
+    </File>
+    <File Include="Scripts/slick/fonts/slick.woff">
+      <publishTime>06/19/2017 14:57:06</publishTime>
+    </File>
+    <File Include="Scripts/slick/slick-theme.css">
+      <publishTime>06/19/2017 14:57:04</publishTime>
+    </File>
+    <File Include="Scripts/slick/slick-theme.less">
+      <publishTime>06/19/2017 14:57:04</publishTime>
+    </File>
+    <File Include="Scripts/slick/slick-theme.scss">
+      <publishTime>06/19/2017 14:57:04</publishTime>
+    </File>
+    <File Include="Scripts/slick/slick.css">
+      <publishTime>06/19/2017 14:57:04</publishTime>
+    </File>
+    <File Include="Scripts/slick/slick.js">
+      <publishTime>06/19/2017 14:57:04</publishTime>
+    </File>
+    <File Include="Scripts/slick/slick.less">
+      <publishTime>06/19/2017 14:57:04</publishTime>
+    </File>
+    <File Include="Scripts/slick/slick.min.js">
+      <publishTime>06/19/2017 14:57:04</publishTime>
+    </File>
+    <File Include="Scripts/slick/slick.scss">
+      <publishTime>06/19/2017 14:57:04</publishTime>
+    </File>
+    <File Include="Scripts/summernote.min.js">
+      <publishTime>06/19/2017 16:18:04</publishTime>
+    </File>
+    <File Include="Scripts/Users/index.js">
+      <publishTime>06/19/2017 16:18:04</publishTime>
+    </File>
+    <File Include="Views/Default/Index.cshtml">
+      <publishTime>06/19/2017 15:17:36</publishTime>
+    </File>
+    <File Include="Views/Shared/_CheckoutPartner.cshtml">
+      <publishTime>06/26/2017 15:04:26</publishTime>
+    </File>
+    <File Include="Views/Shared/_CheckoutRules.cshtml">
+      <publishTime>06/26/2017 15:31:12</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>07/05/2017 10:23:26</publishTime>
+    </File>
+    <File Include="Views/Shared/_ModalCheckOut.cshtml">
+      <publishTime>06/19/2017 16:05:24</publishTime>
+    </File>
+    <File Include="Views/Shared/_ModalLogin.cshtml">
+      <publishTime>06/21/2017 11:35:18</publishTime>
+    </File>
+    <File Include="Views/Shop/Index.cshtml">
+      <publishTime>07/05/2017 10:09:26</publishTime>
+    </File>
+    <File Include="Views/web.config">
+      <publishTime>06/19/2017 14:55:50</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>06/19/2017 15:05:32</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>06/22/2017 18:15:48</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

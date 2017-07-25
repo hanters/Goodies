@@ -1,0 +1,207 @@
+﻿@using System.Web.Configuration;
+@using System.Web.Configuration;
+@using System.Globalization;
+@using Web.Goodie.Time.Models;
+@model IEnumerable<Web.Goodie.Time.Models.td_brands>
+@{
+    frootyacai_siteEntities db = new frootyacai_siteEntities();
+
+    var Brands = (from a in db.td_brands where a.id_brands != 1 && a.fl_active == "1" select a).ToList();
+
+    var About = (from a in db.tb_about_goodie_time where a.status == true select a).ToList();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Googdies time</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Content/css/style.css" rel="stylesheet" />    
+    <link href="~/Scripts/slick/slick.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/css/modal.css" rel="stylesheet" />
+    <link href="~/Content/css/Global.css" rel="stylesheet" />
+    <style>
+        .span-login {
+            color: #c8bdff !important;
+            font-size: 17px !important;
+            font-weight: bold !important;
+            cursor: pointer !important;
+        }
+    </style>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="center">
+            <div class="menu-top">
+                <div class="box-midia-sociais">
+                    <a href="">
+                        <i class="fa fa-facebook" style="color: #fff;"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa fa-twitter" style="color: #fff;"></i>
+                    </a>
+                    <a href="">
+                        <i class="icon-instagram" style="color: #fff;"></i>
+                    </a>
+                </div>
+                <div class="box-user" id="controler">
+                    @{
+                        if ((Request.Cookies["goodie-user"] == null) || (Request.Cookies["goodie-user"].Value == ""))
+                        {
+                            <text>
+                                <span>
+                                    <i class="glyphicon glyphicon-user"></i>
+                                </span>
+                                <span id="lnk-modal"> LOGIN
+                                </span>
+                            </text>
+                        }
+                        else
+                        {
+                            <text>
+                                <span>
+                                    <i class="glyphicon glyphicon-user"></i>
+                                </span>
+                                <span id="btn-logout">
+                                    LOGOUT
+                                </span>
+                            </text>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="menu-principal">
+            <div class="center">
+                <div class="planta"></div>
+                <a href="/">
+                    <img class="logo" src="~/Content/img/logo.png">
+                </a>
+
+                <div class="hamburgue" onclick="abrirMenuMobile(this);">
+                    <i class="fa fa-reorder"></i>
+                    <i class="fa fa-close" style="display: none;"></i>
+                </div>
+                <nav class="nav-menu">
+                    <ul>
+                        <li>
+                            <img class="splash" src="~/Content/img/menu-hover.png">
+                            <a href="">
+                                About
+                            </a>
+                            <ul class="sub-link-menu">
+                                @for (int i = 0; i < About.Count; i++)
+                                {
+                                    <text>
+                                        <li>
+                                            <a href="/About/@About[i].url">
+                                                @About[i].aba
+                                            </a>
+                                        </li>
+                                    </text>
+                                }
+                            </ul>
+                        </li>
+                        <li>
+                            <img class="splash" src="~/Content/img/menu-hover.png">
+                            <a href="">
+                                Shop
+                            </a>
+                            <ul class="sub-link-menu">
+                                @for (int i = 0; i < Brands.Count; i++)
+                                {
+                                    <text>
+                                        <li>
+                                            <a href="/shop/@Brands[i].url">
+                                                @Brands[i].name
+                                            </a>
+                                        </li>
+                                    </text>
+                                }
+                            </ul>
+                        </li>
+                        <li>
+                            <img class="splash" src="~/Content/img/menu-hover.png">
+                            <a href="">
+                                Media
+                            </a>
+                            <ul class="sub-link-menu">
+                                <li>
+                                    <a href="">
+                                        Link1
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Link1
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Link1
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <img class="splash" src="~/Content/img/menu-hover.png">
+                            <a href="">
+                                Find
+                            </a>
+                            <ul class="sub-link-menu">
+                                <li>
+                                    <a href="">
+                                        Link1
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Link1
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Link1
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </header>
+    <div class="fundo-mapa"></div>
+    @RenderBody()
+    <footer class="rodape">
+        <div class="center">
+            <a href="">
+                <img align="left" src="~/Content/img/logo.png">
+            </a>
+            All Rights reserved to Goodiestime.com (2017).
+
+            <span class="font2">
+                Be a Partner
+            </span>
+        </div>
+    </footer>
+    <div id="boxes">
+        <div id="load" class="window">
+            <center><img src="~/Content/img/loader.gif" alt="Wait" /><br />Wait...</center>
+        </div>
+
+        <div id="masks"></div>
+    </div>
+    @Html.Partial("~/Views/Shared/_ModalLogin.cshtml")
+</body>
+</html>
+<script src="~/Scripts/slick/slick.js"></script>
+<script src="~/Scripts/Default/script.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Scripts/bootbox.min.js"></script>
+<script src="~/Scripts/Login/loginDefalt.js"></script>
+<script src="~/Scripts/Global.js"></script>
+

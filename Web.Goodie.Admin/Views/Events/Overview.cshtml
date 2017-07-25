@@ -1,0 +1,220 @@
+﻿@{
+    ViewBag.Title = "Overview";
+}
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>Events <small> Overview</small></h1>
+            <ol class="breadcrumb">
+              <li class="active"><i class="fa fa-calendar"></i> Events</li><li class="active">Overview</li>
+            </ol>
+            @*<div class="alert alert-success alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              Welcome to SB Admin by <a class="alert-link" href="http://startbootstrap.com">Start Bootstrap</a>! Feel free to use this template for your admin needs! We are using a few different plugins to handle the dynamic tables and charts, so make sure you check out the necessary documentation links provided.
+            </div>*@
+          </div>
+        </div><!-- /.row -->
+        <div class="row">
+            <div class="col-lg-12">
+            <div class="panel panel-success">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-calendar"></i> Events <a data-toggle="modal" class="btn btn-warning pull-right" > <i class="fa fa-calendar"></i> Add New Event</a> <div class="clearfix"></div></h3>
+              </div>
+              <div class="panel-body">
+                <div class="table-responsive">
+                  <table id="posts" class="table table-striped table-bordered">
+                    <thead>
+                      <tr>
+                        <th>ID #</th>
+                        <th>Name</th>
+                        <th>City</th>
+                        <th>Date</th>
+                        <th align="center">status</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade custommodal EventsModal" tabindex="-1" role="dialog" aria-labelledby="EventsModal" data-backdrop="static" data-keyboard="false" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" onclick="closeModal();" ><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title">Event Post</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="AddPost" method="post" action="submit" onsubmit="return false;">
+                           @{Html.RenderPartial("Error");}
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <label>Name</label>
+                                                        <input type="text" id="name" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- /.row -->
+
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-lg-3">
+                                                        <label class="">Address</label>
+                                                        <input id="address" class="form-control" />
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <label class="">City</label>
+                                                        <input id="city" class="form-control" />
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <label class="">State</label>
+                                                        <select name="state" id="state" class="form-control">
+                                                            <option value="" selected="selected">Select a State</option>
+                                                            <option value="AL">Alabama</option>
+                                                            <option value="AK">Alaska</option>
+                                                            <option value="AZ">Arizona</option>
+                                                            <option value="AR">Arkansas</option>
+                                                            <option value="CA">California</option>
+                                                            <option value="CO">Colorado</option>
+                                                            <option value="CT">Connecticut</option>
+                                                            <option value="DE">Delaware</option>
+                                                            <option value="DC">District Of Columbia</option>
+                                                            <option value="FL">Florida</option>
+                                                            <option value="GA">Georgia</option>
+                                                            <option value="HI">Hawaii</option>
+                                                            <option value="ID">Idaho</option>
+                                                            <option value="IL">Illinois</option>
+                                                            <option value="IN">Indiana</option>
+                                                            <option value="IA">Iowa</option>
+                                                            <option value="KS">Kansas</option>
+                                                            <option value="KY">Kentucky</option>
+                                                            <option value="LA">Louisiana</option>
+                                                            <option value="ME">Maine</option>
+                                                            <option value="MD">Maryland</option>
+                                                            <option value="MA">Massachusetts</option>
+                                                            <option value="MI">Michigan</option>
+                                                            <option value="MN">Minnesota</option>
+                                                            <option value="MS">Mississippi</option>
+                                                            <option value="MO">Missouri</option>
+                                                            <option value="MT">Montana</option>
+                                                            <option value="NE">Nebraska</option>
+                                                            <option value="NV">Nevada</option>
+                                                            <option value="NH">New Hampshire</option>
+                                                            <option value="NJ">New Jersey</option>
+                                                            <option value="NM">New Mexico</option>
+                                                            <option value="NY">New York</option>
+                                                            <option value="NC">North Carolina</option>
+                                                            <option value="ND">North Dakota</option>
+                                                            <option value="OH">Ohio</option>
+                                                            <option value="OK">Oklahoma</option>
+                                                            <option value="OR">Oregon</option>
+                                                            <option value="PA">Pennsylvania</option>
+                                                            <option value="RI">Rhode Island</option>
+                                                            <option value="SC">South Carolina</option>
+                                                            <option value="SD">South Dakota</option>
+                                                            <option value="TN">Tennessee</option>
+                                                            <option value="TX">Texas</option>
+                                                            <option value="UT">Utah</option>
+                                                            <option value="VT">Vermont</option>
+                                                            <option value="VA">Virginia</option>
+                                                            <option value="WA">Washington</option>
+                                                            <option value="WV">West Virginia</option>
+                                                            <option value="WI">Wisconsin</option>
+                                                            <option value="WY">Wyoming</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-lg-2">
+                                                        <label class="">Event Date</label>
+                                                        <input id="date" size="16" type="text" class="form-control" readonly="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- /.row -->
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <label class="">Image</label>
+                                                        <div id="imageUpload"></div>
+                                                        <div id="load"></div>
+                                                        <div id="teste"><input id="imagepost" name="imagepost" type="file" multiple="true" data-preview-file-type="any" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div><!-- /.row -->
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="row">
+                                                <div class="col-lg-9 col-xs-9">
+                                                    <div class="form-group">
+                                                        <label><strong> <i class='glyphicon glyphicon-tags small'></i> Tag's</strong></label></label>
+                                                        <div class="input-group">
+                                                            <div class="input-group-addon">#</div>
+                                                            <input class="form-control" placeholder="Enter tag" id="tagname" type="text">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 col-xs-3">
+                                                    <label>&nbsp;</label>
+                                                    <a href="#" id="addtag" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+                                                </div>
+                                            </div><!-- /.row -->
+                                            <div class="row">
+                                                <div class="col-lg-12" id="tags">
+                                                    <input id="taglist" type="hidden" />
+                                                </div>
+                                            </div><!-- /.row -->
+                                        </div><!-- /.row -->
+                                    </div><!-- /.row -->
+
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div id="summernote">Hello Summernote</div>
+                                </div>
+                            </div>
+                            <div class="clear"><br /></div>
+                            <div class="row">
+                                <div class="col-lg-2 pull-right">
+                                    <button class="btn btn-primary form-control" id="Published"><i class="fa fa-user"></i> PUBLISH</button>
+                                </div>
+                                <div class="col-lg-2 pull-right">
+                                    <button class="btn btn-success form-control" id="Draft"><i class="fa fa-user"></i> SAVE A DRAFT</button>
+                                </div>
+                                <div class="col-lg-2 pull-right">
+                                    <button class="btn btn-danger form-control" id="Inactive"><i class="fa fa-user" id="Inactive"></i> DISCARD</button>
+                                </div>
+                            </div><!-- /.row -->
+                            <input type="hidden" id="id_events" />
+                        </form>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+
+@section Scripts{
+<script src="~/Scripts/Events/Events.js"></script>
+}

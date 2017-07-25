@@ -1,0 +1,51 @@
+﻿@using Web.Frooty.Models
+@using System.Web.Configuration;
+@{
+   
+    frootyacai_siteEntities db = new frootyacai_siteEntities();
+    
+    var Events = (from a in db.tb_events where a.id_status == 3 select a).OrderByDescending(a => a.id_events).Take(1).FirstOrDefault();
+    
+}
+    <div class="col-xs-12 col-sm-4 widget">
+            <div class="box-star">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12">
+                        <a href="/Event/@((Events != null? Events.name.Replace(" ","-"): ""))">
+                            <div class="item">
+                                <h3><span class="medium65">Last</span><br /><span class="Heavy85">Event</span></h3>
+                                <div class="thumb">
+                                    <img class="mask" src="@Url.Content("~/Content/Images/mask.png")"  style="background-image: url('@(WebConfigurationManager.AppSettings["Events"] + (Events != null? Events.image : ""))')"/>
+                                </div>               
+                                    <h4>@((Events != null? Events.city + " - " + Events.state : ""))</h4>
+                
+                                <h5>@((Events != null? Events.name: ""))</h5>
+                                <h6>@((Events != null? (Events.date != null? String.Format("{0:MM/dd/yyyy}", Events.date) : ""): ""))</h6>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-12">
+                        <a href="@Url.Action("index", "Partner")">
+                            <div class="item">
+                                <h3><span class="medium65">Be a</span><br /><span class="Heavy85">Partner</span></h3>
+                                <div class="thumb">
+                                    <img class="mask" src="@Url.Content("~/Content/Images/mask.png")" style="background-image: url('/Content/images/beapartner.jpg');"/>
+                                </div>
+                                <h4 class="giant">Want to sell?</h4>
+                            </div>
+                        </a>
+                    </div>
+                    @*<div class="col-xs-12 col-sm-12">
+                        <a href="@Url.Action("index", "Find")">
+                        <div class="item">
+                            <h3><span class="medium65">Find TO</span><br /><span class="Heavy85">BUY</span></h3>
+                            <div class="thumb">
+                                <img class="mask" src="@Url.Content("~/Content/Images/mask.png")" style="background-image: url('/Content/images/findtubuy.jpg');"/>
+                            </div>
+                            <h4 class="giant">Where tu buy?</h4>
+                        </div>
+                        </a>
+                    </div>*@
+                </div>
+            </div>
+        </div>

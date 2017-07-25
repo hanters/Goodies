@@ -1,0 +1,168 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<div class="container">
+    <h1 class="roundedbold yellow">NEWS</h1>
+    <div class="news box-star row" id="container">
+        <div class="col-xs-12 col-sm-4 item">
+            <a href="@Url.Action("Page", "Events")">
+                <div class="itemnew">
+                    <h3><span class="medium65">Sed egestas lectus at justo venenatis sagittis.</span></h3>
+                    <div class="thumb">
+                        <img class="mask" src="@Url.Content("~/Content/Images/mask.png")" />
+                    </div>
+                
+                        <h4>Los Angeles - CA</h4>
+
+                
+                    <h5></h5>
+                    <h6>24/05/2014</h6>
+                </div>
+            </a>
+        </div>
+        <div class="col-xs-12 col-sm-4 item">
+            <a href="@Url.Action("Page", "Events")">
+                <div class="itemnew">
+                    <h3><span class="medium65">Integer sagittis magna eu quam volutpat euismod.</span></h3>
+                    <div class="thumb">
+                        <img class="mask" src="@Url.Content("~/Content/Images/mask.png")" />
+                    </div>
+                
+                        <h4>Los Angeles - CA</h4>
+
+                
+                    <h5></h5>
+                    <h6>24/05/2014</h6>
+                </div>
+            </a>
+        </div>
+        <div class="col-xs-12 col-sm-4 item">
+            <a href="@Url.Action("Page", "Events")">
+                <div class="itemnew">
+                    <h3><span class="medium65">The California Cup</span></h3>
+                    <div class="thumb">
+                        <img class="mask" src="@Url.Content("~/Content/Images/mask.png")" />
+                    </div>
+                
+                        <h4>Los Angeles - CA</h4>
+
+                
+                    <h5></h5>
+                    <h6>24/05/2014</h6>
+                </div>
+            </a>
+        </div>
+        <div class="col-xs-12 col-sm-4 item">
+            <a href="@Url.Action("Page", "Events")">
+                <div class="itemnew">
+                    <h3><span class="medium65">The California Cup</span></h3>
+                    <div class="thumb">
+                        <img class="mask" src="@Url.Content("~/Content/Images/mask.png")" />
+                    </div>
+                
+                        <h4>Los Angeles - CA</h4>
+
+                
+                    <h5></h5>
+                    <h6>24/05/2014</h6>
+                </div>
+            </a>
+        </div>
+        <div class="col-xs-12 col-sm-4 item">
+            <a href="@Url.Action("Page", "Events")">
+                <div class="itemnew">
+                    <h3><span class="medium65">The California Cup</span></h3>
+                    <div class="thumb">
+                        <img class="mask" src="@Url.Content("~/Content/Images/mask.png")" />
+                    </div>
+                
+                        <h4>Los Angeles - CA</h4>
+
+                
+                    <h5></h5>
+                    <h6>24/05/2014</h6>
+                </div>
+            </a>
+        </div>
+        <div class="col-xs-12 col-sm-4 item">
+            <a href="@Url.Action("Page", "Events")">
+                <div class="itemnew">
+                    <h3><span class="medium65">The California Cup</span></h3>
+                    <div class="thumb">
+                        <img class="mask" src="@Url.Content("~/Content/Images/mask.png")" />
+                    </div>
+                
+                        <h4>Los Angeles - CA</h4>
+
+                
+                    <h5></h5>
+                    <h6>24/05/2014</h6>
+                </div>
+            </a>
+        </div>
+        <div class="col-xs-12 col-sm-4 item">
+            <a href="@Url.Action("Page", "Events")">
+                <div class="itemnew">
+                    <h3><span class="medium65">The California Cup</span></h3>
+                    <div class="thumb">
+                        <img class="mask" src="@Url.Content("~/Content/Images/mask.png")" />
+                    </div>
+                
+                        <h4>Los Angeles - CA</h4>
+
+                
+                    <h5></h5>
+                    <h6>24/05/2014</h6>
+                </div>
+            </a>
+        </div>
+        <div class="col-xs-12 col-sm-4 item">
+            <a href="@Url.Action("Page", "Events")">
+                <div class="itemnew">
+                    <h3><span class="medium65">The California Cup</span></h3>
+                    <div class="thumb">
+                        <img class="mask" src="@Url.Content("~/Content/Images/mask.png")" />
+                    </div>
+                
+                        <h4>Los Angeles - CA</h4>
+
+                
+                    <h5></h5>
+                    <h6>24/05/2014</h6>
+                </div>
+            </a>
+        </div>
+        <div class="col-xs-12 col-sm-4 item">
+            <a href="@Url.Action("Page", "Events")">
+                <div class="itemnew">
+                    <h3><span class="medium65">The California Cup</span></h3>
+                    <div class="thumb">
+                        <img class="mask" src="@Url.Content("~/Content/Images/mask.png")" />
+                    </div>
+                
+                        <h4>West Palm Beach- FL</h4>
+
+                
+                    <h5></h5>
+                    <h6>24/05/2014</h6>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>
+<script>
+    //<![CDATA[
+    $(window).load(function () {
+        $(document).ready(function () {
+            var $container = $('#container');
+            $container.imagesLoaded(function () {
+                $container.masonry({
+                    itemSelector: '.item',
+                    columnWidth: '.item',
+                    transitionDuration: 0
+                });
+            });
+        });
+    });//]]> 
+</script>

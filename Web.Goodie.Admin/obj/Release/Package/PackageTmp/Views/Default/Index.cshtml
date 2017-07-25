@@ -1,0 +1,245 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>Dashboard <small>Statistics Overview</small></h1>
+            <ol class="breadcrumb">
+              <li class="active"><i class="fa fa-dashboard"></i> Dashboard</li>
+            </ol>
+            @*<div class="alert alert-success alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              Welcome to SB Admin by <a class="alert-link" href="http://startbootstrap.com">Start Bootstrap</a>! Feel free to use this template for your admin needs! We are using a few different plugins to handle the dynamic tables and charts, so make sure you check out the necessary documentation links provided.
+            </div>*@
+          </div>
+        </div><!-- /.row -->
+
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <i class="fa fa-list fa-5x"></i>
+                  </div>
+                  <div class="col-xs-6 text-right">
+                    <p class="announcement-heading"><span id="Posts"></span></p>
+                    <p class="announcement-text">Posts</p>
+                  </div>
+                </div>
+              </div>
+              <a href="@Url.Action("Overview","News")">
+                <div class="panel-footer announcement-bottom">
+                  <div class="row">
+                    <div class="col-xs-6">
+                      Overview
+                    </div>
+                    <div class="col-xs-6 text-right">
+                      <i class="fa fa-arrow-circle-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="panel panel-warning">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <i class="fa fa-calendar fa-5x"></i>
+                  </div>
+                  <div class="col-xs-6 text-right">
+                    <p class="announcement-heading"><span id="Events"></span></p>
+                    <p class="announcement-text">Events</p>
+                  </div>
+                </div>
+              </div>
+              <a href="@Url.Action("Overview","Events")">
+                <div class="panel-footer announcement-bottom">
+                  <div class="row">
+                    <div class="col-xs-6">
+                      Overview
+                    </div>
+                    <div class="col-xs-6 text-right">
+                      <i class="fa fa-arrow-circle-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="panel panel-danger">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <i class="fa fa-cutlery fa-5x"></i>
+                  </div>
+                  <div class="col-xs-6 text-right">
+                    <p class="announcement-heading"><span id="Recipes"></span></p>
+                    <p class="announcement-text">Recipes</p>
+                  </div>
+                </div>
+              </div>
+              <a href="@Url.Action("Overview","Recipes")">
+                <div class="panel-footer announcement-bottom">
+                  <div class="row">
+                    <div class="col-xs-6">
+                      Overview
+                    </div>
+                    <div class="col-xs-6 text-right">
+                      <i class="fa fa-arrow-circle-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div><!-- /.row -->
+        <div class="row">
+            <div class="col-lg-12">
+            <div class="panel panel-purple">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-group"></i> New Partners</h3>
+              </div>
+              <div class="panel-body">
+                <div class="table-responsive">
+                    <table id="posts" class="table table-bordered table-hover table-striped tablesorter">
+                        <thead>
+                            <tr>
+                                <th>ID # <i class="fa fa-sort"></i></th>
+                                <th>Company <i class="fa fa-sort"></i></th>
+                                <th>Name <i class="fa fa-sort"></i></th>
+                                <th>Phone <i class="fa fa-sort"></i></th>
+                                <th>status <i class="fa fa-sort"></i></th>
+                                <th>View <i class="fa fa-sort"></i></th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="text-right">
+                    <a href="/Partners/Overview">View All Entries <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- /.row -->
+        <div class="modal fade custommodal EventsModal" tabindex="-1" role="dialog" aria-labelledby="EventsModal" data-backdrop="static" data-keyboard="false" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title">Partners</h4>
+                    </div>
+                    <div class="modal-body">                                       
+                        <form onsubmit="return false;">
+                                        @{Html.RenderPartial("Error");}
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3 class="no-margin padding-bottom padding-top">Personal Information</h3>
+                                            </div>
+                                            <div class="col-sm-3 form-group">
+                                                <label for="name">Name*</label>
+                                                @Html.TextBox("name", "", null, new { @class = "form-control", placeholder = "Put your name..." })
+                                            </div>
+                                            <div class="col-sm-3 form-group">
+                                                <label for="lastname">Lastname*</label>
+                                                @Html.TextBox("lastname", "", null, new { @class = "form-control", placeholder = "Put your last name..." })
+                                            </div>
+                                            <div class="col-sm-1 form-group">
+                                                <label for="dob">Birthday</label>
+                                                @Html.TextBox("month", "", null, new { @class = "form-control number", placeholder = "MM", maxlength = "2" })
+                                            </div>
+                                            <div class="col-sm-1 form-group">
+                                                <label for="name">&nbsp;</label>
+                                                @Html.TextBox("day", "", null, new { @class = "form-control number", placeholder = "DD", maxlength = "2" })
+                                            </div>
+                                            <div class="col-sm-1 form-group">
+                                                <label>&nbsp;</label>
+                                                @Html.TextBox("year", "", null, new { @class = "form-control number", placeholder = "YYYY", maxlength = "4" })
+                                            </div>
+                                            @*<div class="col-sm-3">
+                                                    <label for="name">Name</label>
+                                                    @Html.TextBox("name", "", null, new { @class="form-control", placeholder="Put your name..." })
+                                                </div>       *@
+                                            <div class="col-sm-6 form-group">
+                                                <label for="email">E-mail*</label>
+                                                @Html.TextBox("email", "", null, new { @class = "form-control", placeholder = "name@domain.com" })
+                                            </div>
+                                            <div class="col-sm-3 form-group">
+                                                <label for="pass1">Passoword*</label>
+                                                @*@Html.TextBox("password", "", null, new { @class = "form-control", placeholder = "Put your name..." })*@
+                                                <input type="password" id="password" name="password" password" class="form-control" placeholder="Put your password..." />
+                                            </div>
+                                            <div class="col-sm-3 form-group">
+                                                <label for="pass2">Confirm Passoword*</label>
+                                                <input type="password" id="passwordConfirn" name="passwordConfirn" password" class="form-control" placeholder="Put your password..." />
+                                                @*@Html.TextBox("passwordConfirn", "", null, new { @class = "form-control", placeholder = "Put your name..." })*@
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col-sm-12">
+                                                <h3 class="no-margin padding-bottom">Company information</h3>
+                                            </div>
+                                            <div class="col-sm-3 form-group">
+                                                <label for="businessmode">Business</label>
+                                                @Html.DropDownList("id_business", new SelectList(Model, "id_business", "business"), "Selecione", new { @class = "form-control" })
+                                            </div>
+                                            <div class="col-sm-6 form-group">
+                                                <label for="companyname">Company Name</label>
+                                                @Html.TextBox("company", "", null, new { @class = "form-control", placeholder = "YOUR COMPANY" })
+                                            </div>
+                                            <div class="col-sm-3 form-group">
+                                                <label for="texid">Tax ID</label>
+                                                @Html.TextBox("taxID", "", null, new { @class = "form-control", placeholder = "" })
+                                            </div>
+                                            <div class="col-sm-3 form-group">
+                                                <label for="name">Phone*</label>
+                                                @Html.TextBox("phone", "", null, new { @class = "form-control" })
+                                            </div>
+                                            <div class="col-sm-6 form-group">
+                                                <label for="address">Address</label>
+                                                @Html.TextBox("address", "", null, new { @class = "form-control" })
+                                            </div>
+                                            <div class="col-sm-3 form-group">
+                                                <label for="zipcode">Zip Code</label>
+                                                @Html.TextBox("zipCode", "", null, new { @class = "form-control" })
+                                            </div>
+                                            <div class="col-sm-6 form-group">
+                                                <label for="city">City</label>
+                                                @Html.TextBox("city", "", null, new { @class = "form-control" })
+                                            </div>
+                                            <div class="col-sm-6 form-group">
+                                                <label>Country</label>
+                                                @Html.DropDownList("id_country", null, "Select Country", new { @class = "form-control", onchange = "ListCountry(this.value,true)" })
+                                            </div>
+                                            <div class="col-sm-3  form-group">
+                                                <label for="state">State Province*</label>
+                                                <select name="state" id="state" class="form-control">
+                                                    <option value="" selected="selected">Select a State</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-3 form-group">
+                                                <label for="pass2">Status</label>
+                                                @Html.DropDownList("id_statusPartners", null, "Selecione", new { @class = "form-control" })
+
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3 form-group pull-right">
+                                                <label for="pass2">&nbsp;</label>
+                                                @Html.TextBox("save", "SAVE", null, new { @class = "form-control btn btn-warning", type = "button" })
+                                            </div>
+                                        </div>
+                                        <input type="hidden" id="id_partners" />
+                                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+@section Scripts{
+<script src="~/Scripts/Default/Index.js"></script>
+}        

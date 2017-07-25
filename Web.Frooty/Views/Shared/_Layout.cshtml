@@ -1,0 +1,249 @@
+﻿@using Web.Frooty.Models
+@using System.Web.Configuration;
+@using Web.Frooty.Models
+@using System.Web.Configuration;
+@{
+    ViewBag.Title = "Index";
+
+    frootyacai_siteEntities db = new frootyacai_siteEntities();
+
+    var News = (from a in db.tb_newPost where a.id_status == 3 select a).OrderByDescending(a => a.id_newPost).Take(8).ToList();
+
+    var Recipes = (from a in db.tb_recipes where a.id_status == 3 select a).OrderByDescending(a => Guid.NewGuid()).Take(2).ToList();
+
+
+    var Country_ = (from a in db.tb_country where a.fl_active == "1" select new { a.id_country, a.ds_name }).ToArray();
+    ViewData["id_country_"] = new SelectList(Country_, "id_country", "ds_name");
+           
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Frooty Açai - #1 in Brazil</title>
+    <link rel="shortcut icon" href="@Url.Content("~/favicon.png")">
+     <script>
+         var caminhoApp = '@HttpContext.Current.Request.ApplicationPath';
+         var reDados = null;
+         if (caminhoApp == '/') {
+             caminhoApp = "";
+         }
+         (function (i, s, o, g, r, a, m) {
+             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                 (i[r].q = i[r].q || []).push(arguments)
+             }, i[r].l = 1 * new Date(); a = s.createElement(o),
+             m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+         })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+         ga('create', 'UA-81043840-1', 'auto');
+         ga('send', 'pageview');
+
+    </script>
+
+   <!-- Latest compiled and minified JavaScript Jquery -->
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <script src="@Url.Content("~/Scripts/jquery.isotope.min.js")"></script>
+    
+     <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/bootstrap/css/bootstrap.css")">
+    <link href="~/Content/Global.css" rel="stylesheet" />
+    
+
+    <!-- Latest compiled and minified JavaScript Bootstrap -->
+    <script src="@Url.Content("~/Content/bootstrap/js/bootstrap.min.js")"></script>
+
+    <!-- Latest compiled and minified JavaScript Slider -->
+    <script src="@Url.Content("~/Scripts/jquery.slides.min.js")"></script>
+
+    <!-- Latest compiled and minified JavaScript Slider -->
+    <script src="@Url.Content("~/Scripts/imagesloaded.pkgd.min.js")"></script>
+
+    <script src="@Url.Content("~/Scripts/Global.js")"></script>
+
+    <script src="https://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+
+    <script src="https://cdn.datatables.net/responsive/1.0.6/js/dataTables.responsive.min.js"></script>
+
+    <script src="https://cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+
+    <link href="https://cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/responsive/1.0.6/css/dataTables.responsive.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="~/Content/css/modal.css" rel="stylesheet" />
+@*    <!-- Latest compiled and minified JavaScript Slider -->
+    <script src="@Url.Content("~/Scripts/masonry.pkgd.min.js")"></script>*@
+    <script src="~/Scripts/jquery.maskedinput.min.js"></script>
+    <script src="~/Scripts/jquery.maskMoney.js"></script>
+    <script src="~/Scripts/bootbox.min.js"></script>
+    <script src="~/Scripts/Login/login.js"></script>
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        .bootbox-body {
+            font-size:14px!important;
+        }
+    </style>
+</head>
+<body>
+    <div class="header contaiter-fluid">
+        <div class="max-width container">
+            <ul class="partner">
+               
+                @{
+                    if ((Request.Cookies["acai-user"] == null) || (Request.Cookies["acai-user"].Value == ""))
+                    {
+
+                        <text>
+
+                            <li id="get-quote"><a class="heavy85 partner" href="@Url.Action("Index","Partner")"><i class="fa fa-star"></i> GET A QUOTE</a></li>
+
+                        </text>
+                    }
+                    else
+                    {
+
+                        <text>
+
+                           <li id="get-quote"></li>
+
+                        </text>
+
+                    }
+                }
+
+
+                <li></li>
+                <li id="controler">
+                    @{
+                        if ((Request.Cookies["acai-user"] == null) || (Request.Cookies["acai-user"].Value == ""))
+                        {
+
+                            <text>
+
+                                <a class="heavy85 partner" id="lnk-modal" href="#" ><i class="glyphicon glyphicon-user"></i> LOGIN</a>
+
+                            </text>
+                        }
+                        else
+                        {
+
+                            <text>
+
+                                <a class="heavy85 partner" href="#" id="btn-logout"><i class="glyphicon glyphicon-user"></i> LOGOUT</a>
+
+                            </text>
+
+                        }
+                    }
+                </li>
+                <button type="button" class="navbar-toggle visible-xs-block hidden-md hidden-sm hidden-lg">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </ul>
+            @*<a href="@Url.Action("Index", "Default")"><img src="@Url.Content("~/Content/Images/frootyacai.png")" /></a>*@
+
+            <a href="@Url.Action("Index", "Default")"><img src="@Url.Content("~/Content/Images/logoFrooty.png")" /></a>
+            
+            <ul class="menu roundedbold">
+                <li><img class="splash" src="@Url.Content("~/Content/Images/menu-hover.png")" /><a href="@Url.Action("Index","Frooty")">Frooty</a></li>
+                <li><img class="splash" src="@Url.Content("~/Content/Images/menu-hover.png")" /><a href="@Url.Action("Index","Products")">Products</a></li>
+                <li><img class="splash" src="@Url.Content("~/Content/Images/menu-hover.png")" /><a href="@Url.Action("Index","Recipes")">Recipes</a></li>
+                <li class="hidden-xs"><img class="splash" src="@Url.Content("~/Content/Images/menu-hover.png")" /><a href="@Url.Action("Index","Shop")"><i class="glyphicon glyphicon-shopping-cart pink"></i> shop</a></li>
+                <li><img class="splash" src="@Url.Content("~/Content/Images/menu-hover.png")" /><a href="@Url.Action("Index","News")">News</a></li>
+                <li><img class="splash" src="@Url.Content("~/Content/Images/menu-hover.png")" /><a href="@Url.Action("Index","Events")">Events</a></li>
+                <li><img class="splash" src="@Url.Content("~/Content/Images/menu-hover.png")" /><a href="@Url.Action("Index","Find")">Find</a></li>
+                <li><img class="splash" src="@Url.Content("~/Content/Images/menu-hover.png")" /><a href="@Url.Action("Index","Contact")">Contact</a></li>
+            </ul>
+            
+
+            <ul class="social">
+                <li><a href="https://www.facebook.com/pages/Frooty-Acai/109116775841954" target="_blank" class="facebook"></a></li>
+                <li><a href="https://twitter.com/01FrootyAcaiUSA" target="_blank" class="twitter"></a></li>
+            </ul>
+            <img class="overlay visible-lg" src="@Url.Content("~/Content/Images/folhaoverlay.png")" />
+        </div>
+    </div>
+    @Html.Partial("~/Views/Shared/_ModalLogin.cshtml")
+    @Html.Partial("~/Views/Shared/_ModalCheckOut.cshtml")
+    @Html.Partial("~/Views/Shared/_CheckoutPartner.cshtml")
+    @Html.Partial("~/Views/Shared/_CheckoutRules.cshtml")
+
+
+    @RenderBody()
+    <div class="footer container-fluid">
+
+        
+     @if (ViewContext.RouteData.Values["controller"].ToString() == "Default")
+     {
+
+
+        <div class="container">
+            <div class="row content-footer">
+                <div class="col-xs-12 col-sm-5">
+                    <ul class="news-list">
+                        <li><h3 class="yellow roundedbold">NEWS</h3></li>
+                        @foreach (var item in News)
+                        {
+                            <li><a href="/New/@(item.url)"><span class="arrow"></span>@item.title</a></li>
+                        }
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-7 recipesfooter">
+                    <h3 class="yellow roundedbold">RECIPES</h3>
+                    @foreach (var item in Recipes)
+                    {
+                        <a class="recipelink" href="/Recipe/@(item.url)">
+                            <div class="list-recipes col-xs-12 col-sm-12">
+                                <div class="amount-recipe">
+                                    <img class="mask" src="@Url.Content("~/Content/Images/mask-2.png")" style="background-image: url('@(WebConfigurationManager.AppSettings["Recipes"] + item.image)')" />
+                                    <div class="label-title">
+                                        <span class="arrow"></span>
+                                        @item.title
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    }
+                </div>
+            </div>
+            <div class="clear"></div>
+            
+        </div>
+     }
+     
+@if ((ViewContext.RouteData.Values["controller"].ToString() != "Recovery"))
+{
+   if((ViewContext.RouteData.Values["controller"].ToString() != "Shop" && ViewContext.RouteData.Values["action"].ToString() != "Success")){
+ 
+        <div class="row copyright">
+                <div class="max-width container">
+                    <img src="@Url.Content("~/content/images/logo-frooty-footer.png")" class="hidden-xs" />
+                    <span class="col-xs-12">Copyright ©2014 Frooty Açaí and Transportes LLC.</span>
+                    <ul class="">
+                        <li><a href="https://www.facebook.com/pages/Frooty-Acai/109116775841954" target="_blank" class="facebook"></a></li>
+                        <li><a href="https://twitter.com/01FrootyAcaiUSA" target="_blank" class="twitter"></a></li>
+                    </ul>
+                </div>
+        </div>
+}}
+    </div>
+    @RenderSection("scripts", required: false)
+    <script>
+        $(document).ready(function () {
+            $(".navbar-toggle").click(function () {
+                $(".menu").slideToggle();
+            });
+        });
+    </script>
+    <div id="boxes">
+        <div id="load" class="window">
+            <center><img src="~/Content/Images/loader.gif" alt="Wait" /><br />Wait...</center>
+        </div>
+
+        <div id="masks"></div>
+    </div>
+    </body>
+</html>

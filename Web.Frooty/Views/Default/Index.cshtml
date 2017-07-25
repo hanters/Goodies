@@ -1,0 +1,116 @@
+﻿@using Web.Frooty.Models
+@using System.Web.Configuration;
+@{
+    ViewBag.Title = "Index";
+
+    frootyacai_siteEntities db = new frootyacai_siteEntities();
+
+    var Launcher = (from a in db.tb_launcher where a.active == true select a).ToList();
+
+    var Events = (from a in db.tb_events where a.id_status == 3 select a).OrderByDescending(a => a.id_events).Take(1).FirstOrDefault() ;
+
+    var News = (from a in db.tb_newPost where a.id_status == 3 select a).OrderByDescending(a => a.id_newPost).Take(8).ToList();
+           
+}
+
+<div class="banner-home container">
+  <div id="slides">
+      @foreach (var item in Launcher)
+      {
+          <a href="@item.url"><img class="img-responsive" src="http://goodiestime.com/system/Content/Images/Uploads/Launcher/@(WebConfigurationManager.AppSettings["Launcher"] + item.image )"></a>
+      }
+     
+     <a href="#" class="slidesjs-previous slidesjs-navigation"></a>
+     <a  href="#" class="slidesjs-next slidesjs-navigation"></a>
+  </div>
+</div>
+<div class="box-star container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-4">
+            <a href="/Event/@((Events != null? Events.url: ""))">
+                <div class="item">
+                    <h3><span class="medium65">Last</span><br /><span class="Heavy85">Event</span></h3>
+                    <div class="thumb">
+                        <img class="mask" src="@Url.Content("~/Content/Images/mask.png")"  style="background-image: url('@(WebConfigurationManager.AppSettings["Events"] + (Events != null? Events.image : ""))')"/>
+                    </div>               
+                        <h4>@((Events != null? Events.city + " - " + Events.state : ""))</h4>
+                
+                    <h5>@((Events != null? Events.name: ""))</h5>
+                    <h6>@((Events != null? (Events.date != null? String.Format("{0:MM/dd/yyyy}", Events.date) : ""): ""))</h6>
+                </div>
+            </a>
+        </div>
+
+        @if ((Request.Cookies["acai-user"] == null) || (Request.Cookies["acai-user"].Value == ""))
+        {
+            
+            <div class="col-xs-12 col-sm-4">
+                <a href="@Url.Action("index", "Partner")">
+                    <div class="item">
+                        <h3><span class="medium65">Be a</span><br /><span class="Heavy85">Partner</span></h3>
+                        <div class="thumb">
+                            <img class="mask" src="@Url.Content("~/Content/Images/mask.png")" style="background-image: url('/Content/images/beapartner.jpg');" />
+                        </div>
+                        <h4 class="giant">Want to sell?</h4>
+                    </div>
+                </a>
+            </div>
+
+        }
+        else
+        {
+
+            <div class="col-xs-12 col-sm-4">
+                <a href="/Shop">
+                    <div class="item">
+                        <h3><span class="medium65">Be a</span><br /><span class="Heavy85">Partner</span></h3>
+                        <div class="thumb">
+                            <img class="mask" src="@Url.Content("~/Content/Images/mask.png")" style="background-image: url('/Content/images/beapartner.jpg');" />
+                        </div>
+                        <h4 class="giant">Want to sell?</h4>
+                    </div>
+                </a>
+            </div>
+        }
+
+        
+        <div class="col-xs-12 col-sm-4">
+            <a href="@Url.Action("index", "Contact")">
+            <div class="item">
+                <h3><span class="medium65">TALK</span><br /><span class="Heavy85">TO US</span></h3>
+                <div class="thumb">
+                    <img class="mask" src="@Url.Content("~/Content/Images/mask.png")" style="background-image: url('/Content/images/findtubuy.jpg');"/>
+                </div>
+                <h4 class="giant">Any Questions?</h4>
+            </div>
+            </a>
+        </div>
+        @*<div class="col-xs-12 col-sm-4">
+            <a href="@Url.Action("index", "Find")">
+            <div class="item">
+                <h3><span class="medium65">Find TO</span><br /><span class="Heavy85">BUY</span></h3>
+                <div class="thumb">
+                    <img class="mask" src="@Url.Content("~/Content/Images/mask.png")" style="background-image: url('/Content/images/findtubuy.jpg');"/>
+                </div>
+                <h4 class="giant">Where to buy?</h4>
+            </div>
+            </a>
+        </div>*@
+    </div>
+</div>
+ <script>
+     $(document).ready(function() {
+         $("#slides").slidesjs({
+             width: 970,
+             height: 430,
+             pagination: {
+                 active: false,
+             },
+
+             navigation: {
+                 active: false,
+                 effect: "fade"
+             }
+         });
+     });
+  </script>

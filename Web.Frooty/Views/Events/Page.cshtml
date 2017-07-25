@@ -1,0 +1,31 @@
+﻿@using Web.Frooty.Models
+@using System.Web.Configuration;
+@{
+    ViewBag.Title = "Page";
+    ViewBag.Title = "Index";
+    
+    string name =  ViewBag.Nome;
+
+    frootyacai_siteEntities db = new frootyacai_siteEntities();
+    
+    var Events = (from a in db.tb_events where a.url == name select a).OrderByDescending(a => a.id_events).Take(1).FirstOrDefault();  
+}
+<div class="container">
+    <div class="row">
+        <div class="frooty-inc col-xs-12 col-sm-8">
+            <ul class="menu-frooty">
+                <li><h1 class="pink"><span class="medium65"></span><span class="Heavy85"> @((Events != null? Events.name : ""))</span></h1></li>
+                <li class="yellow">@*<span class="bgpink">save the date <strong class="Heavy85">*@@*@((Events != null? (Events.date != null? String.Format("{0:MM/dd/yyyy}", Events.date) : ""): ""))*@@*</strong></span>*@</li>
+                <li class="green"></li>
+            </ul>
+            <div id="newscontent">
+                <div class="bg-dark">
+                 <img class="mask" src="@(WebConfigurationManager.AppSettings["Events"] + ( Events != null ? Events.image : "")  )"/>
+                 @( Events != null ? new HtmlString(Events.content) : new HtmlString(""))
+                </div>
+            </div>
+        </div>
+        @Html.Partial("~/Views/Shared/_PartialSideBar.cshtml")
+    </div>
+</div>
+

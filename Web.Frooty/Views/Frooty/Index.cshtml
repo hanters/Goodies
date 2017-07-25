@@ -1,0 +1,57 @@
+﻿@using System.Linq
+@using Web.Frooty.Models
+@{
+    ViewBag.Title = "Index";
+
+    var db = new frootyacai_siteEntities();
+
+    var result = db.tb_about.Where(a => a.status == true).ToList();
+
+}
+<div class="container">
+    <div class="row">
+        <div class="frooty-inc col-xs-12 col-sm-8">
+            <ul class="menu-frooty">
+                <li>
+                    <h1 class="pink"><span class="medium65">Fro</span><span class="Heavy85">oty</span></h1>
+                </li>
+
+                @for (int i = 0; i < result.Count; i++)
+                {
+                    <li><a href="javascript:void(0);" onclick="TrocaAba('@i');" id="aba_@i" class="frotyclass">@result[i].aba</a></li>
+                }
+
+            </ul>
+
+
+            @for (int i = 0; i < result.Count; i++)
+            {
+                <div id="bloco_@i" class="BlocoClass">
+                    <p>@result[i].title</p>
+                    <div class="bg-dark">
+                        @( new HtmlString(result[i].text))
+                    </div>
+                </div>
+
+            }
+        </div>
+        @Html.Partial("~/Views/Shared/_PartialSideBar.cshtml")
+    </div>
+</div>
+<script>
+
+    $(document).ready(function() {
+        $(".frotyclass").removeClass("active");
+        $(".BlocoClass").hide();
+        $("#aba_0").addClass("active");
+        $("#bloco_0").show();
+    });
+    
+    function TrocaAba(obj) {
+        $(".frotyclass").removeClass("active");
+        $("#aba_" + obj).addClass("active");
+        $(".BlocoClass").hide();
+        $("#bloco_"+ obj).show();
+    }
+
+</script>

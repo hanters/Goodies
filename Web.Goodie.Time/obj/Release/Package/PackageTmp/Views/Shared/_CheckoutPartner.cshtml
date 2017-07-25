@@ -1,0 +1,101 @@
+﻿
+@using Web.Goodie.Time.Models
+@{
+    
+    frootyacai_siteEntities db = new frootyacai_siteEntities();
+    var result = (from a in db.tb_business select a).ToList();
+}
+<div class="modal fade frootystyle" id="CheckoutPartnerModal" tabindex="-1" role="dialog" aria-labelledby="CheckoutModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">PARTENER - CHECKOUT</h4>
+            </div>
+            <div class="modal-body">
+                <form id="form-partners" onsubmit="return false;">
+                    <div class="row form-group">
+                        <div class="col-sm-3">
+                            <label for="name">Name</label>
+                            @Html.TextBox("name", "", null, new { @class = "form-control", disabled = "disabled" })
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="lastname">Last Name</label>
+                            @Html.TextBox("lastname", "", null, new { @class = "form-control", disabled = "disabled" })
+                        </div>
+                        <div class="col-sm-1">
+                            @*<label for="dob">Birthday</label>
+                                @Html.TextBox("month", "", null, new { @class = "form-control" })*@
+                        </div>
+                        <div class="col-sm-1">
+                            @*<label for="name">&nbsp;</label>
+                                @Html.TextBox("day", "", null, new { @class = "form-control" })*@
+                        </div>
+                        <div class="col-sm-1">
+                            @*<label>&nbsp;</label>
+                                @Html.TextBox("year", "", null, new { @class = "form-control"})*@
+                        </div>
+                        @*<div class="col-sm-3">
+                                <label for="name">Name</label>
+                                @Html.TextBox("name", "", null, new { @class="form-control", placeholder="Put your name..." })
+                            </div>       *@
+                        <div class="col-sm-6">
+                            <label for="email">E-mail</label>
+                            @Html.TextBox("email_", "", null, new { @class = "form-control", disabled = "disabled" })
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        @*<div class="col-sm-12">
+                            <h2 class="green CENTER" style="padding-left: 0;">COMPANY INFORMATION</h2>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="businessmode">Business</label>
+                            @Html.DropDownList("id_business", new SelectList(result, "id_business", "business"), "Selecione", new { @class = "form-control" })
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="companyname">Company Name</label>
+                            @Html.TextBox("company", "", null, new { @class = "form-control" })
+                        </div>*@
+                        <div class="col-sm-6 ">
+                            <label>Country*</label>
+                            @Html.DropDownList("id_country_", null, "Select Country", new { @class = "form-control", onchange = "ListCountry_(this.value,true)" })
+                        </div>
+                        <div class="col-sm-6 ">
+                            <label for="state">State Province</label>
+                            <select name="state" id="state" class="form-control">
+                                <option value="" selected="selected">Select a State</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="texid">Tax ID</label>
+                            @Html.TextBox("taxID", "", null, new { @class = "form-control" })
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="name">Phone</label>
+                            @Html.TextBox("phone", "", null, new { @class = "form-control" })
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="address">Address</label>
+                            @Html.TextBox("address", "", null, new { @class = "form-control" })
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="zipcode">ZipCode</label>
+                            @Html.TextBox("zipCode", "", null, new { @class = "form-control" })
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="city">City</label>
+                            @Html.TextBox("city", "", null, new { @class = "form-control" })
+                        </div>
+                        
+                    </div>
+                    <input type="hidden" id="id_partners" />
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-pink pull-left" data-dismiss="modal" data-toggle="modal" data-target="#CheckoutModal" aria-label="Close"><i class="glyphicon glyphicon-chevron-left"></i>BACK</a>
+                <a href="#" class="btn btn-success pull-right btn-paypal" aria-label="Close" id="btn-chechout-partner"><span> CONTINUE </span></i></a>
+                <a href="#" class="btn btn-yellow pull-right" data-dismiss="modal" aria-label="Close">MAKE REQUEST</a>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

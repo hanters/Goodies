@@ -1,0 +1,153 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>Users <small> Overview</small></h1>
+            <ol class="breadcrumb">
+              <li class="active"></i> Events</li><li class="active">Overview</li>
+            </ol>
+            @*<div class="alert alert-success alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              Welcome to SB Admin by <a class="alert-link" href="http://startbootstrap.com">Start Bootstrap</a>! Feel free to use this template for your admin needs! We are using a few different plugins to handle the dynamic tables and charts, so make sure you check out the necessary documentation links provided.
+            </div>*@
+          </div>
+        </div><!-- /.row -->
+        <div class="row">
+            <div class="col-lg-12">
+            <div class="panel panel-success">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-list"></i> Posts <a data-toggle="modal"  class="btn btn-warning pull-right" href="javascript:void(0)"> <i class="fa fa-calendar"></i> Add New Event</a> <div class="clearfix"></div></h3>
+              </div>
+              <div class="panel-body">
+                <div class="table-responsive">
+                  <table id="posts" class="table table-striped table-bordered">
+                    <thead>
+                      <tr>
+                        <th>ID #</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Type User</th>
+                        <th align="center">status</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                     
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade custommodal EventsModal" tabindex="-1" role="dialog" aria-labelledby="EventsModal" data-backdrop="static" data-keyboard="false" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" onclick="closeModal();"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title">User</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="AddPost" action="@Url.Action("NewPost", "News")" method="post" onsubmit="return false;">
+                             @{Html.RenderPartial("Error");}
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <label>Name</label>
+                                                        <input id="name" name="name" type="text" class="form-control"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- /.row -->
+
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <label class="">E-mail</label>
+                                                        <input type="text" class="form-control" id="email" name="password"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.row -->
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <label class="">Password</label>
+                                                        <input type="text" class="form-control" id="password" name="password"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div><!-- /.row -->
+                                    <div class="row" id="divAtive">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <label class="">Active:</label>
+                                                        <input type="radio" name="active" id="active_yes" />Yes
+                                                         <input type="radio" name="active" id="active_no" />No
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                @*</div>*@
+
+                                <div class="col-lg-4">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="row">
+                                                <div class="col-lg-9 col-xs-9">
+                                                    <div class="form-group">
+                                                        <label><strong>Type User</strong></label>
+                                                        <div class="input-group">
+                                                            @Html.DropDownList("typeUser", null, "Selecione", new { @class = "form-control" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                               
+                                            </div><!-- /.row -->
+                                            <div class="row">
+                                                <div class="col-lg-12" id="tags">
+                                                    <input id="taglist" type="hidden" />
+                                                </div>
+                                            </div><!-- /.row -->
+                                        </div><!-- /.row -->
+                                    </div><!-- /.row -->
+                                </div>
+                            </div>
+   
+                            <div class="clear"><br /></div>
+                            <div class="row">
+                                <div class="col-lg-2 pull-right">
+                                    <button class="btn btn-primary form-control" id="Published"><i class="fa fa-user"></i> Save</button>
+                                </div>
+                                <input type="hidden" id="id_login" />
+                            </div><!-- /.row -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+@section Scripts{
+<script src="~/Scripts/Users/index.js"></script>
+}

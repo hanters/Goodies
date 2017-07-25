@@ -1,0 +1,114 @@
+﻿@using Web.Goodie.Time.Models
+@using System.Configuration;
+@{
+
+    frootyacai_siteEntities db = new frootyacai_siteEntities();
+    var result = (from a in db.tb_business select a).ToList();
+
+    
+}
+<style type="text/css">
+    
+    .traco {
+        text-decoration: line-through;
+    }
+
+</style>
+<div class="modal fade frootystyle" id="CheckoutRules" tabindex="-1" role="dialog" aria-labelledby="CheckoutModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">CHECKOUT</h4>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table id="cart-rules" class="table responsive dt-responsive" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Amount</th>
+                                <th>Price</th>
+                                <th>Total Weight</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        @*<div class="row">
+                            <div class="col-xs-9 col-sm-9">
+                                <div class="form-group">
+                                    <label>+ Shipping</label><br />
+                                    <strong class="yellow-small">500,00</strong>
+                                </div>
+                            </div>
+                            <div class="col-xs-3 col-sm-3">
+                                <div class="form-group">
+                                    <label>&nbsp;</label><br />
+                                    <a href="#" class="btn btn-success">OK</a>
+                                </div>
+                            </div>
+                        </div>*@
+                    </div>
+                    <input type="hidden" id="hdn-weight_total" />
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="text-right total">
+                            <strong>Total items</strong><br />
+                            <strong id="lbl-total-rules" class="yellow-small"></strong>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="row bartotal">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="row">
+                            <div class="col-xs-9 col-sm-9">
+                                <div class="form-group cs-hidden">
+                                    <label>+ Shipping</label><br />
+                                    <strong id="lbl-shipping" class="yellow-small"></strong>
+                                </div>
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    <div class="form-group">
+                                        <label>&nbsp;</label><br />
+                                        @*<a href="#" class="btn btn-success">OK</a>*@
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="hdn-weight_total" />
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="text-right total">
+                            <strong>TOTAL</strong><br />
+                            <strong id="lbl-total-rules-shipping" class="yellow"></strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="modal-footer">
+                <form action="@ConfigurationManager.AppSettings["UrlPaypall"]" method="post">
+                   
+                    <input type="hidden" name="return" value="@ConfigurationManager.AppSettings["Urlreturn"]" />
+                    <input type="hidden" name="business" value="@ConfigurationManager.AppSettings["UserName"]" />
+                    <input type="hidden" name="custom" id="custom" />
+                    <input type="hidden" name="notify_url" value="@ConfigurationManager.AppSettings["notify_url"]">
+                    <input type="hidden" name="cmd" value="_cart" />
+                    <input type="hidden" name="upload" value="1" />                                  
+                    <input type="hidden" name="handling_cart" id="handling_cart">
+
+                    <div id="div-iten"></div>
+                    <a href="#" class="btn btn-pink pull-left" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#CheckoutPartnerModal"><i class="glyphicon glyphicon-chevron-left"></i> BACK</a>
+                    <button class="btn btn-success pull-right btn-paypal" aria-label="Close" id="btn-chechout-partner"><span>PAY WITH </span><i class="fa fa-cc-paypal"></i></button>
+                    <a href="#" class="btn btn-yellow pull-right" data-dismiss="modal" aria-label="Close">MAKE REQUEST</a>
+                </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+

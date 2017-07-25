@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f98d9dc78b91481ebdadf55f748d284c" Name="Diagram1">
+        <EntityTypeShape EntityType="frootyacai_siteModel.tb_business" Width="1.5" PointX="6" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="frootyacai_siteModel.tb_country" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="frootyacai_siteModel.tb_events" Width="1.5" PointX="11" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="frootyacai_siteModel.tb_grupo_shipping" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="frootyacai_siteModel.tb_launcher" Width="1.5" PointX="5.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="frootyacai_siteModel.tb_location" Width="1.5" PointX="7.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="frootyacai_siteModel.tb_login" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="frootyacai_siteModel.tb_newPost" Width="1.5" PointX="11" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="frootyacai_siteModel.tb_partners" Width="1.5" PointX="8.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="frootyacai_siteModel.tb_recipes" Width="1.5" PointX="11" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="frootyacai_siteModel.tb_roles_products" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="frootyacai_siteModel.tb_rules" Width="1.5" PointX="13.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="frootyacai_siteModel.tb_shipping" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="frootyacai_siteModel.tb_shop" Width="1.5" PointX="10.5" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="frootyacai_siteModel.tb_states" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="frootyacai_siteModel.tb_status" Width="1.5" PointX="8.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="frootyacai_siteModel.tb_status_products" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="frootyacai_siteModel.tb_status_roles" Width="1.5" PointX="10.5" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="frootyacai_siteModel.tb_status_shop" Width="1.5" PointX="8.25" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="frootyacai_siteModel.tb_statusPartners" Width="1.5" PointX="6" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="frootyacai_siteModel.tb_typeUser" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="frootyacai_siteModel.td_itens_shop" Width="1.5" PointX="12.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="frootyacai_siteModel.td_Products" Width="1.5" PointX="10.5" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="frootyacai_siteModel.R_6" ManuallyRouted="false" />
+        <AssociationConnector Association="frootyacai_siteModel.FK_tb_states_tb_country" ManuallyRouted="false" />
+        <AssociationConnector Association="frootyacai_siteModel.R_2" ManuallyRouted="false" />
+        <AssociationConnector Association="frootyacai_siteModel.FK_tb_grupo_shipping_tb_grupo_shipping" ManuallyRouted="false" />
+        <AssociationConnector Association="frootyacai_siteModel.FK_tb_grupo_shipping_tb_states" ManuallyRouted="false" />
+        <AssociationConnector Association="frootyacai_siteModel.R_1" ManuallyRouted="false" />
+        <AssociationConnector Association="frootyacai_siteModel.R_5" ManuallyRouted="false" />
+        <AssociationConnector Association="frootyacai_siteModel.FK_tb_partners_tb_states" ManuallyRouted="false" />
+        <AssociationConnector Association="frootyacai_siteModel.FK_tb_shop_tb_partners" ManuallyRouted="false" />
+        <AssociationConnector Association="frootyacai_siteModel.R_7" ManuallyRouted="false" />
+        <AssociationConnector Association="frootyacai_siteModel.R_4" ManuallyRouted="false" />
+        <AssociationConnector Association="frootyacai_siteModel.R_5_" ManuallyRouted="false" />
+        <AssociationConnector Association="frootyacai_siteModel.R_6_" ManuallyRouted="false" />
+        <AssociationConnector Association="frootyacai_siteModel.FK_tb_shop_tb_status_shop" ManuallyRouted="false" />
+        <AssociationConnector Association="frootyacai_siteModel.FK_td_itens_shop_tb_shop" ManuallyRouted="false" />
+        <AssociationConnector Association="frootyacai_siteModel.FK_td_itens_shop_td_Products" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,122 @@
+﻿@using System.Web.Configuration;
+@using System.Web.Configuration;
+@using System.Globalization;
+@using Web.Goodie.Time.Models;
+@model IEnumerable<Web.Goodie.Time.Models.td_brands>
+@{
+    frootyacai_siteEntities db = new frootyacai_siteEntities();
+    var News = (from a in db.tb_newPost where a.id_status == 3 select a).OrderByDescending(a => a.id_newPost).Take(7).ToList();
+
+    var Launcher = (from a in db.tb_launcher
+                    where a.fl_tipo_site == "1" && a.active == true
+                    select new
+                    {
+                        a.id_launcher,
+                        a.title,
+                        a.url,
+                        a.image,
+                        a.active,
+                        a.ts_user_cadm,
+                    }).OrderByDescending(a => a.id_launcher).ToList();
+
+}
+<section class="banner-top">
+    <div class="center">
+        <div class="slider slider1">
+            @for (int i = 0; i < Launcher.Count; i++)
+            {
+                <text>
+                    <a href="">
+                        <img src="@(WebConfigurationManager.AppSettings["Launcher"] + (Launcher != null ? Launcher[i].image : ""))">
+                    </a>
+                </text>
+            }
+        </div>
+    </div>
+</section>
+<section class="brands">
+    <div class="center">
+        <div class="comeca-brands">
+            <h2 class="titulo2">
+                <span class="sombra-texto">Brands</span>
+            </h2>
+            <div class="carroussel-1">
+                <div class="slider2">
+                    @for (int i = 0; i < Model.ToList().Count; i++)
+                    {
+                        <text>
+                            <a href="/shop/@(Model != null ? Model.ToList()[i].url : " ")">
+                                <img src="@(WebConfigurationManager.AppSettings["BrandsLogo"] + (Model != null ? Model.ToList()[i].LogoTipoImgUrl : ""))">
+                            </a>
+                        </text>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="news-e-videos">
+    <div class="center">
+        <div class="comeca-news-e-videos">
+            <div class="col-50">
+                <h2 class="titulo2">
+                    <span class="sombra-texto">
+                        <img align="left" src="~/Content/img/logo.png">
+                        News
+                    </span>
+                </h2>
+                <div class="news">
+                    <ul>
+                        @foreach (var item in News)
+                        {
+                            <li>
+                                <a href="/New/@(item.url)">
+                                    @item.title
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="col-50">
+                <h2 class="titulo2">
+                    Videos
+                </h2>
+                <div class="videos">
+                    <video src="#"></video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="instagram">
+    <div class="center">
+        <div class="comeca-instagram">
+            <h2 class="titulo2">Instagram</h2>
+            <div class="slider slider3">
+                <!-- 					<a href="">
+                                        <img src="~/Content/img/fundo-instagram.png">
+                                    </a>
+                                    <a href="">
+                                        <img src="~/Content/img/fundo-instagram.png">
+                                    </a>
+                                    <a href="">
+                                        <img src="~/Content/img/fundo-instagram.png">
+                                    </a>
+                                    <a href="">
+                                        <img src="~/Content/img/fundo-instagram.png">
+                                    </a>
+                                    <a href="">
+                                        <img src="~/Content/img/fundo-instagram.png">
+                                    </a>
+                                    <a href="">
+                                        <img src="~/Content/img/fundo-instagram.png">
+                                    </a>
+                                    <a href="">
+                                        <img src="~/Content/img/fundo-instagram.png">
+                                    </a>	 -->
+            </div>
+        </div>
+    </div>
+</section>
+

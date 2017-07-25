@@ -1,0 +1,98 @@
+﻿
+@using Web.Frooty.Models
+@using System.Web.Configuration;
+@{
+    ViewBag.Title = "Index";
+
+    frootyacai_siteEntities db = new frootyacai_siteEntities();
+    var Events = (from a in db.tb_events where a.id_status == 3 select a).OrderByDescending(a => a.id_events).ToList() ;
+
+
+    if (Events != null)
+    {
+        Events = Events.Skip((1 - 1) * 9).Take(9).ToList();
+    }
+          
+}
+<div class="container">
+    <h1 class="roundedbold yellow">Events</h1>
+    <div class="news box-star row" id="container">
+
+        @foreach (var item in Events)
+        {
+            <div class="col-xs-12 col-sm-4 item">
+            <a href="/Event/@(item.url)">
+                <div class="itemnew">
+                    <h3><span class="medium65">@item.name</span></h3>
+                    <div class="thumb">
+                        <img class="mask" src="@Url.Content("~/Content/Images/mask.png")"  style="background-image: url('@(WebConfigurationManager.AppSettings["Events"] + item.image)')"/>
+                    </div>
+                        <h4>@( item.city + " - " + item.state )</h4>
+                    <h5></h5>
+                    @*<h6>@(String.Format("{0:MM/dd/yyyy}", item.date))</h6>*@
+                </div>
+            </a>
+        </div>
+        }      
+    </div>
+ <input type="button" class="btn btn-pink center-block" value="MORE POSTS" id="btn" />
+</div>
+<script type="text/javascript">
+   
+    $(document).ready(function () {
+
+        var page = 2
+
+        $(function () {
+
+            var $container = $('#container');
+
+            $container.isotope({
+                itemSelector: '.item'
+            });
+
+        });
+
+        $("#btn").on('click', function () {
+            $.ajax({
+                url: caminhoApp + '/Events/Events',
+                dataType: "json",
+                type: "POST",
+                data: { page: page },
+                success: function (data) {
+                    $(data.result).each(function () {
+
+                        //INICIAR LOAD
+
+                        var $newItems = $('<div class="col-xs-12 col-sm-4 item">' +
+                            '<a href="/Event/'+ this.url +'">' +
+                                '<div class="itemnew">'+
+                                    '<h3><span class="medium65">'+ this.name +'</span></h3>'+
+                                    '<div class="thumb">'+
+                                        '<img class="mask" src="@Url.Content("~/Content/Images/mask.png")"  style="background-image: url(\'' + data.path + this.image + '\')"/>'+
+                                    '</div>'+
+                                        '<h4>'+ this.city + " - " + this.state +'</h4>'+
+                                    '<h5></h5>'+
+                                    '<h6>'+ this.date +'</h6>'+
+                                '</div>'+
+                            '</a>'+
+                        '</div>');
+
+                        $("#container").isotope('insert', $newItems);
+
+                        //FINALIZAR LOAD
+
+                    });
+
+                },
+                error: function (error) {
+                }
+            });
+
+            page++;
+
+        });
+    });
+
+</script>
+

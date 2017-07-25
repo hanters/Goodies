@@ -1,0 +1,76 @@
+﻿@*Modal Login*@
+<div class="modal fade frootystyle" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="LoginModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">LOGIN</h4>
+            </div>
+            <div class="modal-body">
+                <div class="loginbox">
+                    <form method="post" id="loginform">
+                        <div class="form-group">
+                            <label>E-mail</label>
+                            <input type="text" id="email" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" id="password" />
+                        </div>
+                        <div class="actionlogin">
+                            <a href="#" class="forget"><strong>Forgot the password?</strong></a>
+                            <button type="button" class="btn btn-success pull-right" id="btn-login">Connect</button>
+                        </div>
+                    </form>
+                    <form method="post" id="recoveryform" style="display: none;">
+                        <div class="form-group">
+                            <label>E-mail</label>
+                            <input type="text" class="form-control" id="sendEmail"  />
+                        </div>
+                        <div class="actionlogin">
+                            <a href="#" class="reminded"><strong>I remember the password.</strong></a>
+                            <button type="button" class="btn btn-success pull-right" id="btn_reenvio">Send</button>
+                        </div>
+                    </form>
+                    <form method="post" id="TrocarSenhaForm" style="display: none;">
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" id="password_" />
+                        </div>
+                        <div class="form-group">
+                            <label>New Password</label>
+                            <input type="password" class="form-control" id="Newpassword" />
+                        </div>
+                        <div class="form-group">
+                            <label>Verifying new Password</label>
+                            <input type="password" class="form-control" id="confNewpassword" />
+                        </div>
+                        <div class="actionlogin">
+                            <a href="#" class="forget"><strong>Forgot the password?</strong></a>
+                            <button type="button" class="btn btn-success pull-right" id="btn-change">Change</button>
+                        </div>
+                       
+                    </form>
+                    <script>
+                        $(document).ready(function () {
+                            $(".forget").click(function () {
+                                $("#loginform").hide();
+                                $("#TrocarSenhaForm").hide();
+                                $("#recoveryform").show();
+                                $(".modal.frootystyle .modal-header h4").html("Recovery Password");
+                            });
+
+                            $(".reminded").click(function () {
+                                $("#recoveryform").hide();
+                                $("#TrocarSenhaForm").hide();
+                                $("#loginform").show();
+                                $(".modal.frootystyle .modal-header h4").html("LOGIN");
+                            });
+                        });
+                    </script>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

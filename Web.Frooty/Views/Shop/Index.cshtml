@@ -1,0 +1,70 @@
+﻿@using Web.Frooty.Models
+@using System.Web.Configuration;
+@using System.Web.Configuration;
+@using System.Globalization;
+@model IEnumerable<Web.Frooty.Models.td_Products>
+    @{ViewBag.Title = "Index";}
+
+    <div class="container">
+        <div class="col-md-12">
+            <h1 class="roundedbold yellow pull-left"><i class="glyphicon glyphicon-shopping-cart pink"></i> SHOP</h1>
+            <div class="cart-box pull-right pink"><span class="pull-left" style="line-height: 85px; margin-right: 10px;">CART</span><a href="#cart" data-toggle="modal" data-target="#CheckoutModal"> <span class="label label-success">0 itens</span></a></div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-12" id="ShopContainer">
+            <div class="row">
+                @for (int i = 0; i < Model.ToList().Count; i++)
+                {
+                    <text>
+                        <div class="col-xs-12 col-sm-6 col-md-4 item-product">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="row">
+                                                <div class="col-xs-9">
+                                                    <h2 class="productname pink medium65">@Model.ToList()[i].name</h2>
+                                                    <h3 class="green condensed57">@Model.ToList()[i].flavour</h3>
+                                                </div>
+                                                <div class="col-xs-3 sizebox">
+                                                    <div>
+                                                        <span class="productsize yellow">@Model.ToList()[i].weight.ToString().Replace(",",".")</span>
+                                                        <span>Lb</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6 imgbox">
+                                            <img src="@( WebConfigurationManager.AppSettings["Products"] + Model.ToList()[i].picture )" class="img-responsive imgproduct" />
+                                        </div>
+                                        <div class="col-xs-6" id-product="@Model.ToList()[i].id_products">
+                                            <span class="condensed57 yellow valuebox">$<span class="Heavy85 valueitem">@(string.Format(CultureInfo.GetCultureInfo("en-US"), "{0:C}", Model.ToList()[i].price).Replace("$", ""))</span></span>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control number" placeholder="Amount" maxlength="4" />
+                                            </div>
+                                            <a href="#" class="btn btn-success add-cart">ADD TO CART</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </text>
+                }
+            </div>
+            <input type="button" class="btn btn-pink center-block" @((Request.Cookies["acai-user"] == null ? "style=display:none" : (Request.Cookies["acai-user"].Value == "" ? "style=display:none" : ""))) value="CHECKOUT" id="btn-checkout" data-toggle="modal" data-target="#CheckoutModal">
+            <input type="hidden" id="hdn-price" />
+            <input type="hidden" id="hdn-total-iten" />
+            <input type="hidden" id="hdn-total" />
+            <input type="hidden" id="hdn-price-rules" />
+            <input type="hidden" id="hdn-total-iten-rules" />
+            <input type="hidden" id="hdn-total-rules" />
+        </div>
+    </div>
+@section Scripts{
+<script src="~/Scripts/Shop/index.js"></script>
+
+
+}

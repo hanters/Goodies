@@ -1,0 +1,70 @@
+﻿@*Modal Login*@
+<div class="modal fade frootystyle" id="CheckoutModal" tabindex="-1" role="dialog" aria-labelledby="CheckoutModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">CART - CHECKOUT</h4>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table id="cart" class="table responsive dt-responsive" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Amount</th>
+                                <th>Price</th>
+                                <th>Total</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="clearfix"></div>
+                <hr />
+                <div class="row bartotal">
+                    <div class="col-xs-12 col-sm-6">
+                        @*<div class="row">
+                            <div class="col-xs-9 col-sm-9">
+                                <div class="form-group">
+                                    <label>Promotion code</label><br />
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-xs-3 col-sm-3">
+                                <div class="form-group">
+                                    <label>&nbsp;</label><br />
+                                    <a href="#" class="btn btn-success">OK</a>
+                                </div>
+                            </div>
+                        </div>*@
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="text-right total">
+                            <strong>TOTAL</strong><br />
+                            <strong id="lbl-total" class="yellow"></strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-pink pull-left" aria-label="Close" data-dismiss="modal"><i class="glyphicon glyphicon-chevron-left"></i> CONTINUE SHOPPING</a>
+                <a href="#" class="btn btn-success pull-right btn-paypal" id="btn-pay" aria-label="Close"><span> BUY </span></a>
+                <a href="#" class="btn btn-yellow pull-right" data-dismiss="modal" aria-label="Close">MAKE REQUEST</a>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script>
+
+    //$(document).ready(function () {
+    //    $('#cart').dataTable({
+    //        "responsive": true,
+    //        "lengthChange": false,
+    //        "pageLength": 6
+    //    });
+    //});
+</script>

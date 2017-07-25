@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Frooty", "Web.Frooty\Web.Frooty.csproj", "{7A836D11-9CB4-46E6-89A9-0636C9BF55C1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E7E8F50F-4731-4502-AE45-60C7EA5FC285}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Goodie.Admin", "Web.Goodie.Admin\Web.Goodie.Admin.csproj", "{FFFFDFDF-E254-4B06-A90D-9E594C5F852B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Frooty.Admin", "Web.Frooty.Admin\Web.Frooty.Admin.csproj", "{01B48EAB-26E1-48B3-98A9-87858B10A482}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Goodie", "Web.Goodie\Web.Goodie.csproj", "{9B02E670-C11C-420C-8F34-7E5E04E1DCB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Goodie.Time", "Web.Goodie.Time\Web.Goodie.Time.csproj", "{7284F86C-21BD-4040-8DBC-A1C48A7386DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A836D11-9CB4-46E6-89A9-0636C9BF55C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A836D11-9CB4-46E6-89A9-0636C9BF55C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A836D11-9CB4-46E6-89A9-0636C9BF55C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A836D11-9CB4-46E6-89A9-0636C9BF55C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFFFDFDF-E254-4B06-A90D-9E594C5F852B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFFFDFDF-E254-4B06-A90D-9E594C5F852B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFFFDFDF-E254-4B06-A90D-9E594C5F852B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFFFDFDF-E254-4B06-A90D-9E594C5F852B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01B48EAB-26E1-48B3-98A9-87858B10A482}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01B48EAB-26E1-48B3-98A9-87858B10A482}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01B48EAB-26E1-48B3-98A9-87858B10A482}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01B48EAB-26E1-48B3-98A9-87858B10A482}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B02E670-C11C-420C-8F34-7E5E04E1DCB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B02E670-C11C-420C-8F34-7E5E04E1DCB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B02E670-C11C-420C-8F34-7E5E04E1DCB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B02E670-C11C-420C-8F34-7E5E04E1DCB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7284F86C-21BD-4040-8DBC-A1C48A7386DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7284F86C-21BD-4040-8DBC-A1C48A7386DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7284F86C-21BD-4040-8DBC-A1C48A7386DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7284F86C-21BD-4040-8DBC-A1C48A7386DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+EndGlobal

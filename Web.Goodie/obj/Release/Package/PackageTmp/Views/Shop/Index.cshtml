@@ -1,0 +1,159 @@
+﻿@using System.Web.Configuration;
+@using System.Web.Configuration;
+@using System.Globalization;
+@using Web.Goodie.Models;
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+
+    frootyacai_siteEntities db = new frootyacai_siteEntities();
+    var About = (from a in db.tb_about_goodie_time where a.status == true select a).ToList();
+    
+    int id_brands =  Model[0].id_brands;
+    
+    var Products = (from a in  db.td_Products where a.id_brands == id_brands select a ).ToList();
+    
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Googdies time</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Scripts/slick/slick.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="header shop">
+        <div class="center">
+            <div class="menu-top">
+                <div class="box-midia-sociais">
+                    <a href="">
+                        <i class="fa fa-facebook" style="color: #fff;"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa fa-twitter" style="color: #fff;"></i>
+                    </a>
+                    <a href="">
+                        <i class="icon-instagram" style="color: #fff;"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <div class="menu-principal">
+            <div class="center">
+                <div class="planta"></div>
+                <a href="" class="mobile">
+                    <img class="logo" src="~/Content/img/brand-logo.png">
+                </a>
+                <div class="hamburgue" onclick="abrirMenuMobile(this);">
+                    <i class="fa fa-reorder"></i>
+                    <i class="fa fa-close" style="display: none;"></i>
+                </div>
+                <nav class="nav-menu menu-center">
+                    <ul>
+                        <li>
+                            <img class="splash" src="~/Content/img/menu-hover.png">
+                            <a href="">
+                                About
+                            </a>
+                            <ul class="sub-link-menu">
+
+                                @for (int i = 0; i < About.Count; i++)
+                                {
+                                    <text>
+                                        <li>
+                                            <a href="/About/@About[i].url">
+                                                @About[i].aba
+                                            </a>
+                                        </li>
+                                    </text>
+                                }
+                            </ul>
+                        </li>
+                        <li class="menu-logo-brand">
+                            <a href="">
+                                <img src="@(WebConfigurationManager.AppSettings["BrandsLogo"] + (Model != null ? Model[0].LogoTipoImgUrl : ""))">
+                            </a>
+
+                        </li>
+                        <li class="username-estilo1">
+                            <a href="">
+                                USERNAME
+                                <i class="fa fa-caret-down" style="color: #6c6c6c;"></i>
+                            </a>
+                            <ul class="sub-link-menu">
+                                <li>
+                                    <a href="">
+                                        Link1
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Link1
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Link1
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+
+    </header>
+    <div class="fundo-mapa"></div>
+    @*<section class="item-name-principal">
+        <div class="comeca-item-name-principal">
+            <div class="col-33">
+                <h2 class="title-item cor3">featured</h2>
+
+            </div>
+            <div class="col-33">
+                <a href="" class="item-1">
+                    <h2 class="title-item">item name</h2>
+                    <img src="~/Content/img/diamante.png">
+                    <span class="price bg-green">$ 100</span>
+                </a>
+            </div>
+            <div class="col-33">
+                <h2 class="title-item"></h2>
+            </div>
+
+        </div>
+
+    </section>*@
+    <section class="itens-group">
+
+            @for (int i = 0; i < Products.Count; i++)
+            {
+                <text>
+                    <div class="comeca-itens-group">
+                        <div class="col-33">
+                            <a href="">
+                                <h2 class="title-item">@Products[i].name</h2>
+                                <img src="@(WebConfigurationManager.AppSettings["Products"] + (Model != null ? Products[i].picture : ""))">
+                                <span class="price bg-blue">$ @(string.Format(CultureInfo.GetCultureInfo("en-US"), "{0:C}", Products[i].price).Replace("$", ""))</span>
+                            </a>
+                        </div>
+                    </div>
+                </text>
+            }    
+    </section>
+    <footer class="rodape rodape2">
+        <div class="center">
+            <a href="/">
+                <img src="~/Content/img/logo.png">
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>

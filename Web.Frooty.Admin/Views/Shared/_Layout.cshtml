@@ -1,0 +1,217 @@
+﻿@using Web.Frooty.Admin.Util;
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Frooty Panel Control</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="@Url.Content("~/Content/css/bootstrap.css")" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="@Url.Content("~/Content/css/sb-admin.css")" rel="stylesheet">
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/font-awesome.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/Fonts/fonts.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/Css/Custom.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/Css/bootstrap-switch.min.css")" >
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/datepicker.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/Css/fileinput.min.css")" >
+
+
+      <link rel="stylesheet" href="@Url.Content("~/Content/Css/jquery-ui-1.10.3.custom.css")" >
+      <link rel="stylesheet" href="@Url.Content("~/Content/Css/jquery-ui-1.10.3.theme.css")" >
+      <link rel="stylesheet" href="@Url.Content("~/Content/Css/jquery.ui.1.10.3.ie.css")">
+
+      <link href="~/Content/css/modal.css" rel="stylesheet"/>
+
+
+
+      <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
+    @*<link rel="stylesheet" href="//cdn.datatables.net/1.10.1/css/jquery.dataTables.css">*@
+    <link rel="stylesheet" href="//cdn.datatables.net/plug-ins/be7019ee387/integration/bootstrap/3/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/summernote.css")" />
+      <script>
+          (function (i, s, o, g, r, a, m) {
+              i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                  (i[r].q = i[r].q || []).push(arguments)
+              }, i[r].l = 1 * new Date(); a = s.createElement(o),
+              m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+          })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+          ga('create', 'UA-55486116-1', 'auto');
+          ga('send', 'pageview');
+
+</script>
+  </head>
+
+  <body>
+
+    <div id="wrapper">
+
+      <!-- Sidebar -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><h1>FROOTY AÇAI</h1></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav side-nav">
+                <li class="active" id="menu-dashboard"><a href="@Url.Action("Index", "Default")"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a></li>
+                <li id="menu-about"><a href="@Url.Action("index","about")"><i class="glyphicon glyphicon-pencil"> </i> About </a></li>
+
+                <li id="menu-brands"><a href="@Url.Action("index","brands")"><i class="glyphicon glyphicon-tags"> </i> Brands </a></li>
+
+                <li id="menu-products"><a href="@Url.Action("index","products")"><i class="fa fa-star fa-fw"></i> Products </a></li>
+                <li id="menu-shop"><a href="@Url.Action("index","shop")"><i class="fa fa-shopping-cart fa-fw"></i> Shop </a></li>
+                <li id="menu-rules"><a href="@Url.Action("rules", "rules")"><i class="glyphicon glyphicon-scale"></i>  Rules </a></li>
+                <li id="menu-rules-products"><a href="/rules-products"><i class="fa fa-info fa-fw"></i> Rules - Products </a></li>
+                <li id="menu-shipping"><a href="/Shipping"><i class="glyphicon glyphicon-plane"></i> Shipping</a></li>
+                <li id="menu-news"><a href="@Url.Action("overview","news")"><i class="fa fa-list fa-fw"></i> News </a></li>
+                <li id="menu-events"><a href="@Url.Action("Overview","Events")"><i class="fa fa-calendar fa-fw"></i> Events </a></li>
+                <li id="menu-recipes"><a href="@Url.Action("Overview","Recipes")"><i class="fa fa-cutlery fa-fw"></i> Recipes </a></li>
+                <li id="menu-launcher"><a href="@Url.Action("Index","Launcher")"><i class="fa fa-certificate fa-fw"></i> Launcher Banners</a></li>
+                <li id="menu-locations"><a href="@Url.Action("Index","Locations")"><i class="fa fa-map-marker fa-fw"></i> Locations</a></li>
+                <li id="menu-partners"><a href="@Url.Action("Overview","Partners")"><i class="fa fa-group fa-fw"></i> Partners </a> </li>
+                <li id="menu-users"><a href="@Url.Action("Index","Users")"><i class="fa fa-user fa-fw"></i> Users </a> </li>
+
+            </ul>
+          <ul class="nav navbar-nav navbar-right navbar-user">
+            @*<li class="dropdown messages-dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Messages <span class="badge">7</span> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header">7 New Messages</li>
+                <li class="message-preview">
+                  <a href="#">
+                    <span class="avatar"><img src="http://placehold.it/50x50"></span>
+                    <span class="name">John Smith:</span>
+                    <span class="message">Hey there, I wanted to ask you something...</span>
+                    <span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>
+                  </a>
+                </li>
+                <li class="divider"></li>
+                <li class="message-preview">
+                  <a href="#">
+                    <span class="avatar"><img src="http://placehold.it/50x50"></span>
+                    <span class="name">John Smith:</span>
+                    <span class="message">Hey there, I wanted to ask you something...</span>
+                    <span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>
+                  </a>
+                </li>
+                <li class="divider"></li>
+                <li class="message-preview">
+                  <a href="#">
+                    <span class="avatar"><img src="http://placehold.it/50x50"></span>
+                    <span class="name">John Smith:</span>
+                    <span class="message">Hey there, I wanted to ask you something...</span>
+                    <span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>
+                  </a>
+                </li>
+                <li class="divider"></li>
+                <li><a href="#">View Inbox <span class="badge">7</span></a></li>
+              </ul>
+            </li>*@
+            @*<li class="dropdown alerts-dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> Alerts <span class="badge">3</span> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Default <span class="label label-default">Default</span></a></li>
+                <li><a href="#">Primary <span class="label label-primary">Primary</span></a></li>
+                <li><a href="#">Success <span class="label label-success">Success</span></a></li>
+                <li><a href="#">Info <span class="label label-info">Info</span></a></li>
+                <li><a href="#">Warning <span class="label label-warning">Warning</span></a></li>
+                <li><a href="#">Danger <span class="label label-danger">Danger</span></a></li>
+                <li class="divider"></li>
+                <li><a href="#">View All</a></li>
+              </ul>
+            </li>*@
+            <li class="dropdown user-dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> @SessaoUtil.Recuperar("name")<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                @*<li><a href="#"><i class="fa fa-envelope"></i> Inbox <span class="badge">7</span></a></li>*@
+                <li class="divider"></li>
+                <li><a href="@Url.Action("index", "Login")"><i class="fa fa-power-off"></i> Log Out</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <div id="page-wrapper">
+
+        @RenderBody()
+
+      </div><!-- /#page-wrapper -->
+
+    </div><!-- /#wrapper -->
+    <script>
+        var caminhoApp = '@HttpContext.Current.Request.ApplicationPath';
+        if (caminhoApp == '/') {
+            caminhoApp = "";
+        }
+    </script>
+    <!-- JavaScript -->
+    <script src="@Url.Content("~/Scripts/jquery-1.9.1.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.9.2.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/File-upload/jquery.fileupload.js")"></script>
+    @*<script src="@Url.Content("~/Scripts/File-upload/jquery.fileupload-ui.js")"></script>*@
+    <script src="@Url.Content("~/Scripts/File-upload/jquery.iframe-transport.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.hotkeys.js")"></script>
+    <script src="@Url.Content("~/Scripts/Global.js")"></script>
+
+    <!-- Page Specific Plugins -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.1/js/jquery.dataTables.js"></script>
+    <script src="@Url.Content("~/Scripts/summernote.min.js")"></script>
+    <script src="//cdn.datatables.net/plug-ins/be7019ee387/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap-switch.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/fileinput.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/bootbox.min.js")"></script>
+    <script src="~/Scripts/jquery.maskedinput.min.js"></script>
+    <script src="~/Scripts/jquery.maskMoney.js"></script>
+      
+    
+      <script>
+          $(document).ready(function () {
+
+              $(".number").keydown(function (e) {
+                  // Allow: backspace, delete, tab, escape, enter and .
+                  if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+                      // Allow: Ctrl+A
+                      (e.keyCode == 65 && e.ctrlKey === true) ||
+                      // Allow: home, end, left, right
+                      (e.keyCode >= 35 && e.keyCode <= 39)) {
+                      // let it happen, don't do anything
+                      return;
+                  }
+                  // Ensure that it is a number and stop the keypress
+                  if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                      e.preventDefault();
+                  }
+              });
+          });
+
+      </script>
+    @RenderSection("scripts", required: false)
+      <div id="boxes">
+          <div id="load" class="window">
+              <center><img src="~/Content/Images/loader.gif" alt="Wait" /><br />Wait...</center>
+          </div>
+          
+          <div id="masks"></div>
+      </div>
+  </body>
+</html>

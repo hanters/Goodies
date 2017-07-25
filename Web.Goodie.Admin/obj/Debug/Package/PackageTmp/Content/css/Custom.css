@@ -1,0 +1,343 @@
+﻿body {
+    font-size: 18px;
+    font-family: "57Condensed", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #fff;
+}
+
+.no-margin{
+    margin: 0;
+}
+
+.padding-total{
+    padding: 15px;
+}
+
+.padding-bottom{
+    padding-bottom: 15px;
+}
+
+.padding-top{
+    padding-top: 15px;
+}
+
+.padding-left {
+    padding-left: 15px;
+}
+
+.padding-right{
+    padding-right: 15px;
+}
+
+.isotope-item {
+  z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}
+
+/**** Isotope CSS3 transitions ****/
+
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:      -o-transform, opacity;
+          transition-property:         transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+      -ms-transition-duration: 0s;
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
+}
+
+/* End: Recommended Isotope styles */
+
+header, footer, nav, section {
+    display: block;
+}
+
+.navbar-right h2 {
+    display: inline-block;
+    text-transform: uppercase;
+    color:#ea0082;
+    margin: 6px 0 0;
+}
+
+.navbar-inverse {
+    min-height: 71px;
+    background-color: #6f247a;
+    color: #ffd800;
+    border: none;
+}
+
+    .navbar-inverse a, .navbar-inverse .navbar-nav > li > a  {
+        color: #FFF;
+    }
+
+.nav.navbar-nav.side-nav {
+    /*background-color: #6f247a;*/
+}
+
+
+.navbar-inverse 
+ul.nav.navbar-nav.side-nav {
+    top:71px;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    background-color: #068643;
+}
+
+.navbar-brand img {
+    width: 100px;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #fff;
+}
+
+a:active, a:visited{
+    outline: none !important;
+}
+
+
+.yellow {
+    color:#ffd800 !important;
+}
+
+.pink {
+    color:#ea0082 !important;
+}
+
+.green {
+    color: #068643 !important;
+}
+
+.white
+{
+    color: #FFF;
+}
+
+.bgpink {
+    background-color:#ea0082;
+    padding:12px;
+    line-height: 43px;
+}
+
+.clear {
+    clear: both;
+}
+
+.navbar-header h1, .tipography {
+    font-family: "RoundedBold";
+    color: #ffd800;
+    margin: 0;
+}
+
+    .navbar-header h1 span {
+        font-family: '57Condensed';
+        text-transform: uppercase;
+        color:#FFF;
+    }
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+
+.navbar-inverse .navbar-nav .open > a {
+    color:#ea0082;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus,.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus, .dropdown-menu > .active {
+    color: #ea0082 !important;
+    background-color: #080808;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    color: #FFF;
+    background-color: #068643;
+}
+
+.badge2.btn-warning, .badge2.btn-success, .badge2.btn-danger {
+    display:inline-block;
+    padding: 6px;
+    line-height:12px;
+    border-radius: 0 6px;
+}
+
+.side-nav > li.dropdown > ul.dropdown-menu > li > a:hover {
+    background-color: rgba(0,0,0,0.5);
+}
+
+.panel-purple {
+    border-color: #6f247a;
+}
+
+.panel-purple > .panel-heading {
+    color: #FFF;
+    background-color: #6f247a;
+    border-color: #6f247a;
+}
+
+    .panel-purple > .panel-body {
+        /*background-color: #FFF;*/
+        padding: 15px;
+    }
+
+ .btn-primary {
+    color: #FFF;
+    background-color: #6f247a;
+    border-color: #4d1356;
+}
+
+    .btn-primary:hover {
+        background-color:#81348c;
+        border-color: #4d1356;
+    }
+
+
+    .side-nav > li.dropdown > ul.dropdown-menu > li > a {
+    color: #FFF;
+    font-size: 1.1em;
+    padding: 15px 15px 15px 25px;
+}
+
+    .navbar-toggle {
+    margin-top: 18px;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+
+    .navbar-nav > li > a {
+           padding-top: 18px;
+    padding-bottom: 20px;
+    }
+
+    .panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 22px;
+    color: inherit;
+    line-height: 33px;
+}
+}
+
+.label.label-info {
+    font-weight: normal;
+    display: inline-block;
+    margin: 5px 5px 0 0;
+    padding:5px;
+    
+}
+
+    .label.label-info > span.close{
+        float:none;
+        font-family: "85Heavy";
+        line-height: 0px;
+}
+
+    #page-wrapper {
+  padding: 21px 25px;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 32px;
+    
+}
+
+.glyphicon.small {
+    font-size: 0.8em;
+}
+
+#addtag {
+    display: block;
+    height: 34px;
+    line-height: 1.42857;
+    padding: 6px 12px;
+}
+
+.custommodal .modal-dialog
+{
+    width: 80%;
+}
+
+.panel-title > a.btn
+{
+    color: #FFF;
+}

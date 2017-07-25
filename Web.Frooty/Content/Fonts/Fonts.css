@@ -1,0 +1,37 @@
+﻿
+@font-face {
+    font-family: '57Condensed';
+    src: url('helveticaneueltcom-cn.eot');
+    src: url('helveticaneueltcom-cn.svg#HelveticaNeueCondensed') format('svg'),
+         url('helveticaneueltcom-cn.eot?#iefix') format('embedded-opentype'),
+         url('helveticaneueltcom-cn.woff') format('woff'),
+         url('helveticaneueltcom-cn.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: '85Heavy';
+    src: url('helveticaneueltcom-hv.eot');
+    src: url('helveticaneueltcom-hv.svg#HelveticaNeueLTCom85Heavy') format('svg'), 
+         url('helveticaneueltcom-hv.eot') format('embedded-opentype'),
+         url('helveticaneueltcom-hv.woff') format('woff'),
+         url('helveticaneueltcom-hv.ttf') format('truetype');
+         
+}
+
+@font-face {
+    font-family: '65Medium';
+    src: url('helveticaneueltcom-md.eot');
+    src: url('helveticaneueltcom-md.svg#HelveticaNeueLTCom65Medium') format('svg'), 
+         url('helveticaneueltcom-md.eot') format('embedded-opentype'),
+         url('helveticaneueltcom-md.woff') format('woff'),
+         url('helveticaneueltcom-md.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'RoundedBold';
+    src: url('helveticaroundedltstd-bdcn.eot');
+    src: url('helveticaroundedltstd-bdcn.svg#HelveticaRoundedLTStdBoldCondensed') format('svg'),
+         url('helveticaroundedltstd-bdcn.eot') format('embedded-opentype'),
+         url('helveticaroundedltstd-bdcn.woff') format('woff'),
+         url('helveticaroundedltstd-bdcn.ttf') format('truetype');
+}

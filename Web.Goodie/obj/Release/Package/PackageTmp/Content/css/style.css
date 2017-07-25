@@ -1,0 +1,899 @@
+/* v.09 */
+
+@font-face {
+  font-family: 'Saveur Sans Regular';
+  src: local('../fonts/SaveurSans-Regular.otf'), 
+  	url('../fonts/SaveurSans-Regular.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Saveur Sans Bold';
+  src: local('../fonts/SaveurSans-Bold.otf'), 
+  	url('../fonts/SaveurSans-Bold.otf');
+/*  font-weight: bold;*/
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Saveur Sans Light';
+  src: local('../fonts/SaveurSans-Light.otf'), 
+  	url('../fonts/SaveurSans-Light.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Saveur Sans Semibold';
+  src: local('../fonts/SaveurSans-Semi-bold'.otf), 
+  	url('../fonts/SaveurSans-Semi-bold.otf');
+}
+
+*, a{
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	font-family: "Saveur Sans Regular", sans-serif;
+	font-size: 30px;
+  text-decoration:none; 
+  outline:none
+}
+
+.shop ul.sub-link-menu {
+    left: inherit;
+    right: -21px;
+    /* width: 90%; */
+}
+
+.shop nav.nav-menu li .splash {
+    left: inherit;
+    right: -32px;
+}
+
+li.username-estilo1 a {
+    font-family: Saveur Sans Regular !important;
+    color: #59ff80 !important;
+}
+
+li.username-estilo1 ul.sub-link-menu {
+    left: 12px;
+    margin-top: 0px;
+    z-index: 9999;
+}
+
+.cor3 {
+    color: #59ff80;
+}
+
+.mobile {
+    display: none;
+}
+
+html li.menu-logo-brand {
+    margin: 0px 27px !important;
+}
+
+.shop nav.menu-center.nav-menu {
+    width: 100%;
+    margin: 0px;
+}
+
+.shop nav.nav-menu.menu-center > ul {
+    width: 100%;
+    float: left;
+}
+
+.shop nav.nav-menu > ul > li {
+    width: 26%;
+    text-align: right;
+}
+
+.shop li.username-estilo1 {
+    text-align: left !important;
+}
+
+.shop li.menu-logo-brand {
+    text-align: center !important;
+}
+
+
+
+.rodape2 a {
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+.rodape2 a img {
+    width: 126px;
+    position: relative;
+    margin-top: -41px;
+}
+
+h2.title-item.cor3 {
+    margin-top: 38px;
+}
+
+a.item-1 {
+    text-align: center;
+}
+
+a.item-1 img {
+    margin: 11px auto;
+    display: block;
+    width: 62%;
+}
+
+a.item-1 h2 {
+    color: #b4f8ea;
+}
+
+a.item-1 .price {
+    float: left;
+    width: 100%;
+    color: #fff;
+    font-family: 'Saveur Sans Bold', sans-serif;
+}
+
+.comeca-itens-group > div a {
+    text-align: center;
+    float: left;
+    width: 95%;
+}
+
+.comeca-itens-group > div .price {
+    float: left;
+    width: 100%;
+    color: #fff;
+    font-family: 'Saveur Sans Bold', sans-serif;
+    background: url('../img/fundo-azul.png') center no-repeat;
+}
+
+
+a.item-1 .price {
+    background: url('../img/fundo-verde.png') center no-repeat;
+}
+
+.comeca-itens-group > div h2 {
+    color: #b4f8ea;
+    margin-top: 20px;
+}
+
+.comeca-itens-group > div img {
+    margin: 11px auto;
+    display: block;
+    width: 62%;
+}
+
+.sombra-texto {
+    background: url('../img/fundo-texto-brands.png') no-repeat;
+    background-size: cover;
+}
+
+.comeca-itens-group {
+    width: 850px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.comeca-item-name-principal {
+    width: 850px;
+    margin: 10px auto;
+}
+
+section.item-name-principal {
+    float: left;
+    background: url('../img/fundo-feature.png') center 39% no-repeat;
+    background-size: cover;
+    width: 100%;
+    position: relative;
+}
+
+section.itens-group {
+    float: left;
+    width: 100%;
+}
+
+.box-user-sub-menu ul li {
+    float: left;
+    width: 100%;
+    text-align: center;
+    list-style: none;
+    padding: 4px 0px;
+}
+
+.box-user-sub-menu ul li a {
+    padding: 3px 0px;
+    float: left;
+    width: 100%;
+    color: #c8bdff;
+    font-size: 18px;
+}
+
+.box-user-sub-menu ul li a:hover {
+    font-weight: bold;
+}
+
+.box-user-sub-menu {
+    width: 181px;
+    position: absolute;
+    background: #130c10;
+    left: -75px;
+    padding: 10px 0px;
+    z-index: 2;
+    display: none;
+    box-shadow: 0px 14px 35px -5px #000;
+}
+
+.box-user:hover .box-user-sub-menu {
+    display: block;
+}
+
+.hamburgue {
+    color: #fff;
+    float: right;
+    margin-top: 40px;
+    font-size: 30px;
+    cursor: pointer;
+    margin-right: 15px;
+    padding: 0px 6px;
+    border: 1px solid white;
+    display: none;
+}
+
+.fundo-mapa {
+    /* background: url('../img/fundo-banner2.png') no-repeat; */
+    background-size: cover;
+    height: 700px;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+}
+
+section.news-e-videos {
+    float: left;
+    width: 100%;
+}
+
+.banner-top {
+    float: left;
+    width: 100%;
+}
+
+.rodape .font2 {
+    float: right;
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: 800;
+    color: #61ff70;
+}
+
+.rodape {
+    float: left;
+    width: 100%;
+    background: url('../img/bg-retangulo-footer	.png') no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.rodape2 {
+    margin-top: 90px;
+    height: 46px;
+}
+
+.rodape2 > a {
+    width: 100%;
+    float: left;
+    text-align: center;
+}
+
+footer.rodape div {
+    font-size: 13px;
+}
+
+.rodape img {
+    width: 70px;
+    margin-right: 15px;
+    margin-top: -7px;
+}
+
+.comeca-instagram .seta-direita {
+    right: -23px;
+}
+
+.comeca-instagram h2 {
+    margin-bottom: 20px;
+}
+
+.instagram {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.videos video {
+    width: 100%;
+    height: 100%;
+    background: url('../img/fundo-video.png') no-repeat;
+    background-size: cover;
+}
+
+.news {
+    padding: 0px 34px;
+    overflow-y: auto;
+    height: 230px;
+    width: 80%;
+}
+
+.comeca-news-e-videos h2 {
+    margin-bottom: 20px;
+    margin-top: 14px;
+}
+
+.news a {
+    font-size: 15px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.news a:hover, .news li:hover {
+    color: #ea0082;
+}
+
+.news li {
+    color: #fff;
+    list-style-image: url('../img/estrela.png');
+}
+
+.comeca-news-e-videos h2 img {
+    width: 85px;
+    margin-right: 14px;
+    margin-top: -10px;
+}
+
+.slider1 .slick-arrow {
+    opacity: 0;
+}
+
+.hide {
+  display: none !important;
+}
+
+.comeca-brands h2 {
+    margin-bottom: 28px;
+}
+
+.brands {
+    background: url('../img/bg-carrosse-brand.png') no-repeat;
+    background-position: center  36px;
+    height: 246px;
+    float: left;
+    width: 100%;
+}
+
+.slider2 {
+    margin-left: 23px;
+    height: 135px;
+}
+
+.slider2 a {
+    /* background: #6a89af; */
+    border-radius: 50% 50%;
+    margin: 0px 20px;
+    width: 134px !important;
+    overflow: hidden;
+}
+
+.seta-esquerda {
+    left: -33px;
+}
+
+.seta-direita{
+    right: 0px;
+}
+
+.seta-esquerda, .seta-direita {
+    position: absolute;
+    top: 30%;
+    color: #6b6773;
+    font-size: 60px !important;
+    cursor: pointer;
+}
+
+.slider3 .seta-esquerda, .slider3 .seta-direita {
+    top: 31%;
+}
+
+.slider3 img {
+    width: 165px;
+    margin: 0px 5px;
+    height: 164px;
+    float: left;
+}
+
+.titulo2 {
+    color: #3abca0;
+    font-size: 30px;
+    font-family: "Saveur Sans Semibold", sans-serif;
+    text-transform: uppercase;
+}
+
+.slider {
+    text-align: center;
+}
+
+.slider1 img {
+    display: block;
+    margin: auto;
+}
+
+.corpo {
+    float: left;
+    width: 100%;
+}
+
+.planta {
+    width: 351px;
+    height: 300px;
+    background: url(../img/planta-header.png) no-repeat right 3px;
+    position: absolute;
+    /* background-color: red; */
+    right: -68px;
+    top: -37px;
+}
+
+.shop .planta {
+    z-index: 1;
+}
+
+.header {
+    float: left;
+    width: 100%;
+    height: 298px;
+    margin-bottom: -120px;
+    position: relative;
+}
+
+header.header > .center {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+nav.nav-menu {
+    margin-left: 28px;
+    float: left;
+    position: relative;
+    z-index: 1;
+}
+
+nav.nav-menu li .splash {
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+    z-index: 0;
+    left: 50%;
+    opacity: 0;
+    margin-left: -84px;
+    top: -35px;
+    width: 168px;
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+}
+
+nav.nav-menu li {
+    float: left;
+    margin: 35px 27px;
+    list-style: none;
+    position: relative;
+}
+
+nav.nav-menu li:hover .splash {
+    display: block;
+    transform: rotate(0deg);
+    -webkit-transform: rotate(-0deg);
+    -ms-transform: rotate(-0deg);
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+}
+
+nav.nav-menu li:hover > a {
+  color: #bbf4fb;
+}
+
+nav.nav-menu li a {
+    text-decoration: none;
+    font-family: "Saveur Sans Bold";
+    color: #42d2b4;
+    font-size: 36px;
+    font-weight: 900;
+    position: relative;
+    z-index: 0;
+}
+
+.menu-top {
+    height: 46px;
+    position: relative;
+}
+
+.menu-top > div {
+    float: right;
+    margin-left: 26px;
+    margin-top: 5px;
+}
+
+.box-user {
+    position: relative;
+    z-index: 2;
+}
+
+.box-midia-sociais i {
+    font-size: 22px;
+}
+
+.box-midia-sociais .icon-instagram {
+    background: transparent url('../img/icon-instagram.png') no-repeat;
+    background-size: 100%;
+    height: 24px;
+    background-position: center bottom;
+    width: 24px;
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.box-user > span {
+    color: #c8bdff;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.box-user > span i {
+	color: #c8bdff;
+	font-size: 16px;
+}
+
+.menu-principal {
+    background: rgba(21, 27, 42, 0) url(../img/fundo-header.png) no-repeat;
+    background-size: cover;
+    height: 112px;
+    margin-top: -11px;
+    float: left;
+    width: 100%;
+    margin-bottom: 124px;
+    position: relative;
+}
+
+.menu-principal .center {
+    position: relative;
+}
+
+.menu-principal .logo {
+    float: left;
+    width: 210px;
+    height: auto;
+    position: relative;
+    z-index: 2;
+}
+
+body {
+    background: url('../img/bg-site2.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.center {
+	width: 900px;
+	margin: auto;
+}
+
+.col-50 {
+  width: 50%;
+  float: left;
+}
+
+.col-33 {
+    width: 33.3%;
+    float: left;
+}
+
+ul.sub-link-menu {
+    position: absolute;
+    background: #101b2a;
+    left: -22px;
+    padding: 10px 0px;
+    width: 140px;
+    margin-top: 25px;
+    display: none;
+    z-index: 1;
+    text-align: center;
+    box-shadow: 0px 14px 35px -5px #000;
+}
+
+nav.nav-menu li:hover ul.sub-link-menu {
+    display: block;
+}
+
+html ul.sub-link-menu li {
+    float: left;
+    width: 100%;
+    margin: 0px;
+    height: auto;
+    padding: 2px 0px;
+}
+
+ul.sub-link-menu li a {
+    font-size: 16px;
+    padding: 10px 0px;
+    float: left;
+    width: 100%;
+}
+
+/* responsive */
+
+@media all and (max-width: 901px) {
+.menu-principal .logo {
+    width: 130px;
+}
+
+html .center {
+    width: 760px;
+}
+
+.menu-principal {
+    height: 93px;
+}
+
+nav.nav-menu li .splash {
+    width: 130px;
+    margin-left: -65px;
+    top: -27px;
+}
+
+nav.nav-menu > ul > li > a {
+    font-size: 30px;
+}
+
+nav.nav-menu li {
+    margin: 26px 27px;
+}
+
+.slider2 a {
+    margin: 0px 10px;
+}
+
+.planta {
+    background-size: 417px;
+    width: 412px;
+}
+
+.slider3 img {
+    width: 130px;
+    height: auto;
+}
+
+}
+
+@media (max-width: 850px) {
+html .center {
+    width: 610px;
+}
+
+nav.nav-menu li {
+    margin: 26px 13px;
+}
+
+.shop li.menu-logo-brand img {
+    width: 140px;
+}
+
+nav.nav-menu > ul > li > a {
+    font-size: 27px;
+}
+
+.news {
+    width: 75%;
+    height: 160px;
+}
+
+.slider3 img {
+    width: 110px;
+}
+  
+}
+
+@media all and (max-width: 780px) {
+  .hamburgue {
+    display:block;
+  }
+
+.planta {
+    display: none;
+}
+
+.hamburgue {
+    display: block;
+    margin-top: 11px;
+}
+
+html .center {
+    width: 96%;
+}
+
+.header {
+    height: 200px;
+}
+
+nav.nav-menu {
+    width: 100%;
+    margin-left: 0px;
+    margin-top: -14px;
+    background-size: cover;
+    display: none;
+    background: #0c1421;
+}
+
+nav.nav-menu li {
+    width: 100%;
+    text-align: center;
+    margin: 6px 0px;
+}
+
+nav.nav-menu li a {
+    font-size: 24px;
+}
+
+nav.nav-menu li .splash {
+    width: 120px;
+    margin-left: -66px;
+    top: -23px;
+}
+
+ul.sub-link-menu {
+    position: relative;
+    width: 100%;
+    float: left;
+    left: 0px;
+    background: rgb(24, 42, 66);
+}
+
+.menu-principal {
+    height: 57px;
+    margin: 0px;
+}
+
+.menu-principal .logo {
+    width: 107px;
+    margin-left: 10px;
+    margin-top: -8px;
+}
+
+.slider1 img {
+    width: 90%;
+}
+
+.comeca-brands {
+    overflow: hidden;
+}
+
+.seta-esquerda {
+    left: -14px;
+}
+
+.slider2 a {
+    margin: 0px 9px;
+}
+
+.col-50 {
+    width: 100%;
+}
+.col-33 {
+    width: 87%;
+    float: none;
+    margin: auto;
+}
+
+nav.nav-menu.menu-center {
+    margin: 0px;
+}
+
+.shop nav.menu-center.nav-menu {
+    margin-top: -9px;
+}
+
+li.menu-logo-brand {
+    margin: 0px;
+}
+.comeca-item-name-principal {
+    width: 100%;
+    float: left;
+}
+
+.comeca-itens-group{
+    width: 100%;
+    float: left;
+}
+
+.comeca-instagram .slider {
+    width: 91%;
+    margin: auto;
+}
+
+.slider3 img {
+    width: 78px;
+}
+
+.slider3 .seta-esquerda, .slider3 .seta-direita {
+    top: 10%;
+}
+.news {
+    width: 80%;
+}
+
+footer.rodape {
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.rodape .font2 {
+    float: left;
+    width: 100%;
+}
+
+footer.rodape a {
+    float: left;
+    width: 100%;
+    margin: 10px 0p;
+    text-align: center;
+}
+
+
+
+.rodape img {
+    position: relative;
+    left: 50%;
+    margin-left: -35px;
+}
+
+.rodape2 a img {
+    left: 20px;
+}
+
+html body .shop li.menu-logo-brand {
+    display: none;
+}
+
+html body .shop nav.nav-menu > ul > li {
+    width: 100%;
+    text-align: center !important;
+    padding: 10px;
+}
+
+html body .shop nav.nav-menu li .splash {
+    left: 50%;
+    top: -14px;
+}
+
+html body .shop ul.sub-link-menu {
+    left: -9px;
+    right: inherit;
+}
+
+.mobile {
+    display: block;
+}
+
+}

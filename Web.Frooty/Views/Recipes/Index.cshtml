@@ -1,0 +1,96 @@
+﻿ @using Web.Frooty.Models
+@using System.Web.Configuration;
+@{
+    ViewBag.Title = "Index";
+
+    frootyacai_siteEntities db = new frootyacai_siteEntities();
+
+    var Recipes = (from a in db.tb_recipes where a.id_status == 3 select a).OrderByDescending(a => a.id_recipes).ToList();
+
+    if (Recipes != null)
+    {
+        Recipes = Recipes.Skip((1 - 1) * 8).Take(8).ToList();
+    }
+           
+}
+<div class="container">
+    <h1 class="roundedbold yellow">RECIPES</h1>
+    <div class="recipes row">
+
+        @foreach (var item in Recipes)
+        {  
+            <div class="col-xs-12 col-sm-6 item">
+                <a class="recipelink" href="/Recipe/@(item.url)">
+                    <div class="list-recipes col-xs-12 col-sm-12">
+                        <div class="amount-recipe">
+                            <img class="mask" src="@Url.Content("~/Content/Images/mask-2.png")" style="background-image: url('@(WebConfigurationManager.AppSettings["Recipes"] + item.image)')"/>
+                            <div class="label-title">
+                                <span class="arrow"></span>
+                               @item.title
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+     <input type="button" class="btn btn-pink center-block" value="MORE POSTS" id="btn" />
+</div>
+<script type="text/javascript">
+   
+    $(document).ready(function () {
+
+        var page = 2
+
+        $(function () {
+
+            var $container = $('.recipes');
+
+            $container.isotope({
+                itemSelector: '.item'
+            });
+
+        });
+
+        $("#btn").on('click', function () {
+            $.ajax({
+                url: caminhoApp + '/Recipes/Recipes',
+                dataType: "json",
+                type: "POST",
+                data: { page: page },
+                success: function (data) {
+                    $(data.result).each(function () {
+
+                        //INICIAR LOAD
+
+                        var $newItems = $('<div class="col-xs-12 col-sm-6 item">' +
+                                '<a class="recipelink" href="/Recipe/' + this.url + '">' +
+                                    ' <div class="list-recipes col-xs-12 col-sm-12">' +
+                                        '<div class="amount-recipe">' +
+                                            '<img class="mask" src="@Url.Content("~/Content/Images/mask-2.png")" style="background-image: url(\'' + data.path + this.image + '\')"/>' +
+                                            '<div class="label-title">' +
+                                                '<span class="arrow"></span>' +
+                                                this.title +
+                                            '</div>' +
+                                        '</div>' +
+                                    '</div>' +
+                                '</a>' +
+                            '</div>');
+
+                        $(".recipes").isotope('insert', $newItems);
+
+                        //FINALIZAR LOAD
+
+                    });
+
+                },
+                error: function (error) {
+                }
+            });
+
+            page++;
+
+        });
+    });
+
+</script>

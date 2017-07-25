@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="frootyacai_siteModelStoreContainer" CdmEntityContainer="frootyacai_siteEntities">
+    <EntitySetMapping Name="tb_business">
+      <EntityTypeMapping TypeName="frootyacai_siteModel.tb_business">
+        <MappingFragment StoreEntitySet="tb_business">
+          <ScalarProperty Name="id_business" ColumnName="id_business" />
+          <ScalarProperty Name="business" ColumnName="business" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_country">
+      <EntityTypeMapping TypeName="frootyacai_siteModel.tb_country">
+        <MappingFragment StoreEntitySet="tb_country">
+          <ScalarProperty Name="id_country" ColumnName="id_country" />
+          <ScalarProperty Name="ds_name" ColumnName="ds_name" />
+          <ScalarProperty Name="ds_codigo" ColumnName="ds_codigo" />
+          <ScalarProperty Name="fl_active" ColumnName="fl_active" />
+          <ScalarProperty Name="id_user_cadm" ColumnName="id_user_cadm" />
+          <ScalarProperty Name="ts_user_cadm" ColumnName="ts_user_cadm" />
+          <ScalarProperty Name="id_user_manu" ColumnName="id_user_manu" />
+          <ScalarProperty Name="ts_user_manu" ColumnName="ts_user_manu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_events">
+      <EntityTypeMapping TypeName="frootyacai_siteModel.tb_events">
+        <MappingFragment StoreEntitySet="tb_events">
+          <ScalarProperty Name="id_events" ColumnName="id_events" />
+          <ScalarProperty Name="id_status" ColumnName="id_status" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="tags" ColumnName="tags" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="id_user_cadm" ColumnName="id_user_cadm" />
+          <ScalarProperty Name="ts_user_cadm" ColumnName="ts_user_cadm" />
+          <ScalarProperty Name="id_user_manu" ColumnName="id_user_manu" />
+          <ScalarProperty Name="ts_user_manu" ColumnName="ts_user_manu" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="url" ColumnName="url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_grupo_shipping">
+      <EntityTypeMapping TypeName="frootyacai_siteModel.tb_grupo_shipping">
+        <MappingFragment StoreEntitySet="tb_grupo_shipping">
+          <ScalarProperty Name="id_group" ColumnName="id_group" />
+          <ScalarProperty Name="id_shipping" ColumnName="id_shipping" />
+          <ScalarProperty Name="id_state" ColumnName="id_state" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_launcher">
+      <EntityTypeMapping TypeName="frootyacai_siteModel.tb_launcher">
+        <MappingFragment StoreEntitySet="tb_launcher">
+          <ScalarProperty Name="id_launcher" ColumnName="id_launcher" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="id_user_cadm" ColumnName="id_user_cadm" />
+          <ScalarProperty Name="ts_user_cadm" ColumnName="ts_user_cadm" />
+          <ScalarProperty Name="id_user_manu" ColumnName="id_user_manu" />
+          <ScalarProperty Name="ts_user_manu" ColumnName="ts_user_manu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_location">
+      <EntityTypeMapping TypeName="frootyacai_siteModel.tb_location">
+        <MappingFragment StoreEntitySet="tb_location">
+          <ScalarProperty Name="id_location" ColumnName="id_location" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="taxID" ColumnName="taxID" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="zipCode" ColumnName="zipCode" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="id_user_cadm" ColumnName="id_user_cadm" />
+          <ScalarProperty Name="ts_user_cadm" ColumnName="ts_user_cadm" />
+          <ScalarProperty Name="id_user_manu" ColumnName="id_user_manu" />
+          <ScalarProperty Name="ts_user_manu" ColumnName="ts_user_manu" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_login">
+      <EntityTypeMapping TypeName="frootyacai_siteModel.tb_login">
+        <MappingFragment StoreEntitySet="tb_login">
+          <ScalarProperty Name="id_login" ColumnName="id_login" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="id_typeUser" ColumnName="id_typeUser" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_newPost">
+      <EntityTypeMapping TypeName="frootyacai_siteModel.tb_newPost">
+        <MappingFragment StoreEntitySet="tb_newPost">
+          <ScalarProperty Name="id_newPost" ColumnName="id_newPost" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="tags" ColumnName="tags" />
+          <ScalarProperty Name="introduction" ColumnName="introduction" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="id_user_cadm" ColumnName="id_user_cadm" />
+          <ScalarProperty Name="ts_user_cadm" ColumnName="ts_user_cadm" />
+          <ScalarProperty Name="id_user_manu" ColumnName="id_user_manu" />
+          <ScalarProperty Name="ts_user_manu" ColumnName="ts_user_manu" />
+          <ScalarProperty Name="id_status" ColumnName="id_status" />
+          <ScalarProperty Name="url" ColumnName="url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_partners">
+      <EntityTypeMapping TypeName="frootyacai_siteModel.tb_partners">
+        <MappingFragment StoreEntitySet="tb_partners">
+          <ScalarProperty Name="id_partners" ColumnName="id_partners" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="taxID" ColumnName="taxID" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="zipCode" ColumnName="zipCode" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="id_state" ColumnName="id_state" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="id_user_cadm" ColumnName="id_user_cadm" />
+          <ScalarProperty Name="ts_user_cadm" ColumnName="ts_user_cadm" />
+          <ScalarProperty Name="id_user_manu" ColumnName="id_user_manu" />
+          <ScalarProperty Name="ts_user_manu" ColumnName="ts_user_manu" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="id_business" ColumnName="id_business" />
+          <ScalarProperty Name="id_statusPartners" ColumnName="id_statusPartners" />
+          <ScalarProperty Name="changePassWord" ColumnName="changePassWord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_recipes">
+      <EntityTypeMapping TypeName="frootyacai_siteModel.tb_recipes">
+        <MappingFragment StoreEntitySet="tb_recipes">
+          <ScalarProperty Name="id_recipes" ColumnName="id_recipes" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="tags" ColumnName="tags" />
+          <ScalarProperty Name="introduction" ColumnName="introduction" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="id_user_cadm" ColumnName="id_user_cadm" />
+          <ScalarProperty Name="ts_user_cadm" ColumnName="ts_user_cadm" />
+          <ScalarProperty Name="id_user_manu" ColumnName="id_user_manu" />
+          <ScalarProperty Name="ts_user_manu" ColumnName="ts_user_manu" />
+          <ScalarProperty Name="id_status" ColumnName="id_status" />
+          <ScalarProperty Name="url" ColumnName="url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_roles_products">
+      <EntityTypeMapping TypeName="frootyacai_siteModel.tb_roles_products">
+        <MappingFragment StoreEntitySet="tb_roles_products">
+          <ScalarProperty Name="id_role" ColumnName="id_role" />
+          <ScalarProperty Name="id_products" ColumnName="id_products" />
+          <ScalarProperty Name="id_status" ColumnName="id_status" />
+          <ScalarProperty Name="weight_bronze" ColumnName="weight_bronze" />
+          <ScalarProperty Name="price_bronze" ColumnName="price_bronze" />
+          <ScalarProperty Name="weight_silver" ColumnName="weight_silver" />
+          <ScalarProperty Name="price_silver" ColumnName="price_silver" />
+          <ScalarProperty Name="weigth_gold" ColumnName="weigth_gold" />
+          <ScalarProperty Name="price_gold" ColumnName="price_gold" />
+          <ScalarProperty Name="id_user_cadm" ColumnName="id_user_cadm" />
+          <ScalarProperty Name="ts_user_cadm" ColumnName="ts_user_cadm" />
+          <ScalarProperty Name="id_user_manu" ColumnName="id_user_manu" />
+          <ScalarProperty Name="ts_user_manu" ColumnName="ts_user_manu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_rules">
+      <EntityTypeMapping TypeName="frootyacai_siteModel.tb_rules">
+        <MappingFragment StoreEntitySet="tb_rules">
+          <ScalarProperty Name="id_rules" ColumnName="id_rules" />
+          <ScalarProperty Name="weight_bronze" ColumnName="weight_bronze" />
+          <ScalarProperty Name="weight_silver" ColumnName="weight_silver" />
+          <ScalarProperty Name="weigth_gold" ColumnName="weigth_gold" />
+          <ScalarProperty Name="id_user_manu" ColumnName="id_user_manu" />
+          <ScalarProperty Name="ts_user_manu" ColumnName="ts_user_manu" />
+          <ScalarProperty Name="fl_active" ColumnName="fl_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_shipping">
+      <EntityTypeMapping TypeName="frootyacai_siteModel.tb_shipping">
+        <MappingFragment StoreEntitySet="tb_shipping">
+          <ScalarProperty Name="id_shipping" ColumnName="id_shipping" />
+          <ScalarProperty Name="ds_group" ColumnName="ds_group" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="bronze_price" ColumnName="bronze_price" />
+          <ScalarProperty Name="silver_price" ColumnName="silver_price" />
+          <ScalarProperty Name="gold_price" ColumnName="gold_price" />
+          <ScalarProperty Name="fl_shipping" ColumnName="fl_shipping" />
+          <ScalarProperty Name="id_user_cadm" ColumnName="id_user_cadm" />
+          <ScalarProperty Name="ts_user_cadm" ColumnName="ts_user_cadm" />
+          <ScalarProperty Name="id_user_manu" ColumnName="id_user_manu" />
+          <ScalarProperty Name="ts_user_manu" ColumnName="ts_user_manu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_shop">
+      <EntityTypeMapping TypeName="frootyacai_siteModel.tb_shop">
+        <MappingFragment StoreEntitySet="tb_shop">
+          <ScalarProperty Name="status_payment" ColumnName="status_payment" />
+          <ScalarProperty Name="id_transaction" ColumnName="id_transaction" />
+          <ScalarProperty Name="date_payment" ColumnName="date_payment" />
+          <ScalarProperty Name="id_shop" ColumnName="id_shop" />
+          <ScalarProperty Name="id_partners" ColumnName="id_partners" />
+          <ScalarProperty Name="id_status" ColumnName="id_status" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="discount_total" ColumnName="discount_total" />
+          <ScalarProperty Name="shipping_price" ColumnName="shipping_price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_states">
+      <EntityTypeMapping TypeName="frootyacai_siteModel.tb_states">
+        <MappingFragment StoreEntitySet="tb_states">
+          <ScalarProperty Name="id_state" ColumnName="id_state" />
+          <ScalarProperty Name="id_country" ColumnName="id_country" />
+          <ScalarProperty Name="ds_name" ColumnName="ds_name" />
+          <ScalarProperty Name="ds_cod" ColumnName="ds_cod" />
+          <ScalarProperty Name="fl_active" ColumnName="fl_active" />
+          <ScalarProperty Name="id_user_cadm" ColumnName="id_user_cadm" />
+          <ScalarProperty Name="ts_user_cadm" ColumnName="ts_user_cadm" />
+          <ScalarProperty Name="id_user_manu" ColumnName="id_user_manu" />
+          <ScalarProperty Name="ts_user_manu" ColumnName="ts_user_manu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_status">
+      <EntityTypeMapping TypeName="frootyacai_siteModel.tb_status">
+        <MappingFragment StoreEntitySet="tb_status">
+          <ScalarProperty Name="id_status" ColumnName="id_status" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_status_products">
+      <EntityTypeMapping TypeName="frootyacai_siteModel.tb_status_products">
+        <MappingFragment StoreEntitySet="tb_status_products">
+          <ScalarProperty Name="id_status" ColumnName="id_status" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_status_roles">
+      <EntityTypeMapping TypeName="frootyacai_siteModel.tb_status_roles">
+        <MappingFragment StoreEntitySet="tb_status_roles">
+          <ScalarProperty Name="id_status" ColumnName="id_status" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_status_shop">
+      <EntityTypeMapping TypeName="frootyacai_siteModel.tb_status_shop">
+        <MappingFragment StoreEntitySet="tb_status_shop">
+          <ScalarProperty Name="id_status" ColumnName="id_status" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_statusPartners">
+      <EntityTypeMapping TypeName="frootyacai_siteModel.tb_statusPartners">
+        <MappingFragment StoreEntitySet="tb_statusPartners">
+          <ScalarProperty Name="id_statusPartners" ColumnName="id_statusPartners" />
+          <ScalarProperty Name="statusPartners" ColumnName="statusPartners" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_typeUser">
+      <EntityTypeMapping TypeName="frootyacai_siteModel.tb_typeUser">
+        <MappingFragment StoreEntitySet="tb_typeUser">
+          <ScalarProperty Name="id_typeUser" ColumnName="id_typeUser" />
+          <ScalarProperty Name="typeUser" ColumnName="typeUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="td_itens_shop">
+      <EntityTypeMapping TypeName="frootyacai_siteModel.td_itens_shop">
+        <MappingFragment StoreEntitySet="td_itens_shop">
+          <ScalarProperty Name="id_itens" ColumnName="id_itens" />
+          <ScalarProperty Name="id_products" ColumnName="id_products" />
+          <ScalarProperty Name="id_shop" ColumnName="id_shop" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="weight_total" ColumnName="weight_total" />
+          <ScalarProperty Name="discount_total" ColumnName="discount_total" />
+          <ScalarProperty Name="unit_price_rules" ColumnName="unit_price_rules" />
+          <ScalarProperty Name="rules" ColumnName="rules" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="td_Products">
+      <EntityTypeMapping TypeName="frootyacai_siteModel.td_Products">
+        <MappingFragment StoreEntitySet="td_Products">
+          <ScalarProperty Name="fl_active" ColumnName="fl_active" />
+          <ScalarProperty Name="id_products" ColumnName="id_products" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="flavour" ColumnName="flavour" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="id_status" ColumnName="id_status" />
+          <ScalarProperty Name="picture" ColumnName="picture" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="id_user_cadm" ColumnName="id_user_cadm" />
+          <ScalarProperty Name="ts_user_cadm" ColumnName="ts_user_cadm" />
+          <ScalarProperty Name="id_user_manu" ColumnName="id_user_manu" />
+          <ScalarProperty Name="ts_user_manu" ColumnName="ts_user_manu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

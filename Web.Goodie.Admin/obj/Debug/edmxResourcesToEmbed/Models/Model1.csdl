@@ -1,0 +1,682 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="getacai_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tb_about">
+    <Key>
+      <PropertyRef Name="id_About" />
+    </Key>
+    <Property Name="id_About" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="aba" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tb_business">
+    <Key>
+      <PropertyRef Name="id_business" />
+    </Key>
+    <Property Name="id_business" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="business" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tb_partners" Relationship="Self.FK_R_6" FromRole="tb_business" ToRole="tb_partners" />
+  </EntityType>
+  <EntityType Name="tb_country">
+    <Key>
+      <PropertyRef Name="id_country" />
+    </Key>
+    <Property Name="id_country" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ds_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ds_codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fl_active" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="id_user_cadm" Type="Int32" />
+    <Property Name="ts_user_cadm" Type="DateTime" Precision="3" />
+    <Property Name="id_user_manu" Type="Int32" />
+    <Property Name="ts_user_manu" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tb_states" Relationship="Self.FK_tb_states_tb_country" FromRole="tb_country" ToRole="tb_states" />
+  </EntityType>
+  <EntityType Name="tb_events">
+    <Key>
+      <PropertyRef Name="id_events" />
+    </Key>
+    <Property Name="id_events" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_status" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tags" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="Binary" MaxLength="1" FixedLength="true" />
+    <Property Name="id_user_cadm" Type="Int32" />
+    <Property Name="ts_user_cadm" Type="DateTime" Precision="3" />
+    <Property Name="id_user_manu" Type="Int32" />
+    <Property Name="ts_user_manu" Type="DateTime" Precision="3" />
+    <Property Name="date" Type="DateTime" Precision="3" />
+    <Property Name="url" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tb_status" Relationship="Self.FK_R_2" FromRole="tb_events" ToRole="tb_status" />
+  </EntityType>
+  <EntityType Name="tb_grupo_shipping">
+    <Key>
+      <PropertyRef Name="id_group" />
+    </Key>
+    <Property Name="id_group" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_shipping" Type="Int32" Nullable="false" />
+    <Property Name="id_state" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_states" Relationship="Self.FK_tb_grupo_shipping_tb_grupo_shipping" FromRole="tb_grupo_shipping" ToRole="tb_states" />
+    <NavigationProperty Name="tb_shipping" Relationship="Self.FK_tb_grupo_shipping_tb_states" FromRole="tb_grupo_shipping" ToRole="tb_shipping" />
+  </EntityType>
+  <EntityType Name="tb_launcher">
+    <Key>
+      <PropertyRef Name="id_launcher" />
+    </Key>
+    <Property Name="id_launcher" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="url" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="Boolean" />
+    <Property Name="id_user_cadm" Type="Int32" />
+    <Property Name="ts_user_cadm" Type="DateTime" Precision="3" />
+    <Property Name="id_user_manu" Type="Int32" />
+    <Property Name="ts_user_manu" Type="DateTime" Precision="3" />
+    <Property Name="fl_tipo_site" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tb_location">
+    <Key>
+      <PropertyRef Name="id_location" />
+    </Key>
+    <Property Name="id_location" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="birthday" Type="DateTime" Precision="3" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="company" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="taxID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="zipCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="id_user_cadm" Type="Int32" />
+    <Property Name="ts_user_cadm" Type="DateTime" Precision="3" />
+    <Property Name="id_user_manu" Type="Int32" />
+    <Property Name="ts_user_manu" Type="DateTime" Precision="3" />
+    <Property Name="active" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tb_login">
+    <Key>
+      <PropertyRef Name="id_login" />
+    </Key>
+    <Property Name="id_login" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="id_typeUser" Type="Int32" />
+    <Property Name="active" Type="Boolean" />
+    <NavigationProperty Name="tb_typeUser" Relationship="Self.FK_R_1" FromRole="tb_login" ToRole="tb_typeUser" />
+  </EntityType>
+  <EntityType Name="tb_newPost">
+    <Key>
+      <PropertyRef Name="id_newPost" />
+    </Key>
+    <Property Name="id_newPost" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="tags" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="introduction" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="Binary" MaxLength="1" FixedLength="true" />
+    <Property Name="id_user_cadm" Type="Int32" />
+    <Property Name="ts_user_cadm" Type="DateTime" Precision="3" />
+    <Property Name="id_user_manu" Type="Int32" />
+    <Property Name="ts_user_manu" Type="DateTime" Precision="3" />
+    <Property Name="id_status" Type="Int32" />
+    <Property Name="url" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tb_status" Relationship="Self.FK_R_5" FromRole="tb_newPost" ToRole="tb_status" />
+  </EntityType>
+  <EntityType Name="tb_partners">
+    <Key>
+      <PropertyRef Name="id_partners" />
+    </Key>
+    <Property Name="id_partners" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="birthday" Type="DateTime" Precision="3" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="company" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="taxID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="zipCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="id_state" Type="Int32" />
+    <Property Name="state" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="id_user_cadm" Type="Int32" />
+    <Property Name="ts_user_cadm" Type="DateTime" Precision="3" />
+    <Property Name="id_user_manu" Type="Int32" />
+    <Property Name="ts_user_manu" Type="DateTime" Precision="3" />
+    <Property Name="active" Type="Boolean" />
+    <Property Name="id_business" Type="Int32" />
+    <Property Name="id_statusPartners" Type="Int32" />
+    <Property Name="changePassWord" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="tb_business" Relationship="Self.FK_R_6" FromRole="tb_partners" ToRole="tb_business" />
+    <NavigationProperty Name="tb_statusPartners" Relationship="Self.FK_R_7" FromRole="tb_partners" ToRole="tb_statusPartners" />
+    <NavigationProperty Name="tb_states" Relationship="Self.FK_tb_partners_tb_states" FromRole="tb_partners" ToRole="tb_states" />
+    <NavigationProperty Name="tb_shop" Relationship="Self.FK_tb_shop_tb_partners" FromRole="tb_partners" ToRole="tb_shop" />
+  </EntityType>
+  <EntityType Name="tb_recipes">
+    <Key>
+      <PropertyRef Name="id_recipes" />
+    </Key>
+    <Property Name="id_recipes" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tags" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="introduction" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="Binary" MaxLength="1" FixedLength="true" />
+    <Property Name="id_user_cadm" Type="Int32" />
+    <Property Name="ts_user_cadm" Type="DateTime" Precision="3" />
+    <Property Name="id_user_manu" Type="Int32" />
+    <Property Name="ts_user_manu" Type="DateTime" Precision="3" />
+    <Property Name="id_status" Type="Int32" />
+    <Property Name="url" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tb_status" Relationship="Self.FK_R_4" FromRole="tb_recipes" ToRole="tb_status" />
+  </EntityType>
+  <EntityType Name="tb_roles_products">
+    <Key>
+      <PropertyRef Name="id_role" />
+    </Key>
+    <Property Name="id_role" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_products" Type="Int32" Nullable="false" />
+    <Property Name="id_status" Type="Int32" Nullable="false" />
+    <Property Name="weight_bronze" Type="Decimal" Precision="6" Scale="1" />
+    <Property Name="price_bronze" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="weight_silver" Type="Decimal" Precision="6" Scale="1" />
+    <Property Name="price_silver" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="weigth_gold" Type="Decimal" Precision="6" Scale="1" />
+    <Property Name="price_gold" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="id_user_cadm" Type="Int32" />
+    <Property Name="ts_user_cadm" Type="DateTime" Precision="3" />
+    <Property Name="id_user_manu" Type="Int32" />
+    <Property Name="ts_user_manu" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="td_Products" Relationship="Self.FK_R_5_" FromRole="tb_roles_products" ToRole="td_Products" />
+    <NavigationProperty Name="tb_status_roles" Relationship="Self.FK_R_6_" FromRole="tb_roles_products" ToRole="tb_status_roles" />
+  </EntityType>
+  <EntityType Name="tb_rules">
+    <Key>
+      <PropertyRef Name="id_rules" />
+    </Key>
+    <Property Name="id_rules" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="weight_bronze" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="weight_silver" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="weigth_gold" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="id_user_manu" Type="Int32" />
+    <Property Name="ts_user_manu" Type="DateTime" Precision="3" />
+    <Property Name="fl_active" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tb_shipping">
+    <Key>
+      <PropertyRef Name="id_shipping" />
+    </Key>
+    <Property Name="id_shipping" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ds_group" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="bronze_price" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="silver_price" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="gold_price" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="fl_shipping" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="id_user_cadm" Type="Int32" />
+    <Property Name="ts_user_cadm" Type="DateTime" Precision="3" />
+    <Property Name="id_user_manu" Type="Int32" />
+    <Property Name="ts_user_manu" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tb_grupo_shipping" Relationship="Self.FK_tb_grupo_shipping_tb_states" FromRole="tb_shipping" ToRole="tb_grupo_shipping" />
+  </EntityType>
+  <EntityType Name="tb_shop">
+    <Key>
+      <PropertyRef Name="id_shop" />
+    </Key>
+    <Property Name="id_shop" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_partners" Type="Int32" Nullable="false" />
+    <Property Name="id_status" Type="Int32" Nullable="false" />
+    <Property Name="date" Type="DateTime" Precision="3" />
+    <Property Name="total" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="discount_total" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="shipping_price" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="date_payment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="id_transaction" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="status_payment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tb_partners" Relationship="Self.FK_tb_shop_tb_partners" FromRole="tb_shop" ToRole="tb_partners" />
+    <NavigationProperty Name="tb_status_shop" Relationship="Self.FK_tb_shop_tb_status_shop" FromRole="tb_shop" ToRole="tb_status_shop" />
+    <NavigationProperty Name="td_itens_shop" Relationship="Self.FK_td_itens_shop_tb_shop" FromRole="tb_shop" ToRole="td_itens_shop" />
+  </EntityType>
+  <EntityType Name="tb_states">
+    <Key>
+      <PropertyRef Name="id_state" />
+    </Key>
+    <Property Name="id_state" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_country" Type="Int32" Nullable="false" />
+    <Property Name="ds_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ds_cod" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="fl_active" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="id_user_cadm" Type="Int32" />
+    <Property Name="ts_user_cadm" Type="DateTime" Precision="3" />
+    <Property Name="id_user_manu" Type="Int32" />
+    <Property Name="ts_user_manu" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tb_country" Relationship="Self.FK_tb_states_tb_country" FromRole="tb_states" ToRole="tb_country" />
+    <NavigationProperty Name="tb_grupo_shipping" Relationship="Self.FK_tb_grupo_shipping_tb_grupo_shipping" FromRole="tb_states" ToRole="tb_grupo_shipping" />
+    <NavigationProperty Name="tb_partners" Relationship="Self.FK_tb_partners_tb_states" FromRole="tb_states" ToRole="tb_partners" />
+  </EntityType>
+  <EntityType Name="tb_status">
+    <Key>
+      <PropertyRef Name="id_status" />
+    </Key>
+    <Property Name="id_status" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tb_events" Relationship="Self.FK_R_2" FromRole="tb_status" ToRole="tb_events" />
+    <NavigationProperty Name="tb_newPost" Relationship="Self.FK_R_5" FromRole="tb_status" ToRole="tb_newPost" />
+    <NavigationProperty Name="tb_recipes" Relationship="Self.FK_R_4" FromRole="tb_status" ToRole="tb_recipes" />
+  </EntityType>
+  <EntityType Name="tb_status_products">
+    <Key>
+      <PropertyRef Name="id_status" />
+    </Key>
+    <Property Name="id_status" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tb_status_roles">
+    <Key>
+      <PropertyRef Name="id_status" />
+    </Key>
+    <Property Name="id_status" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tb_roles_products" Relationship="Self.FK_R_6_" FromRole="tb_status_roles" ToRole="tb_roles_products" />
+  </EntityType>
+  <EntityType Name="tb_status_shop">
+    <Key>
+      <PropertyRef Name="id_status" />
+    </Key>
+    <Property Name="id_status" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tb_shop" Relationship="Self.FK_tb_shop_tb_status_shop" FromRole="tb_status_shop" ToRole="tb_shop" />
+  </EntityType>
+  <EntityType Name="tb_statusPartners">
+    <Key>
+      <PropertyRef Name="id_statusPartners" />
+    </Key>
+    <Property Name="id_statusPartners" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="statusPartners" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tb_partners" Relationship="Self.FK_R_7" FromRole="tb_statusPartners" ToRole="tb_partners" />
+  </EntityType>
+  <EntityType Name="tb_typeUser">
+    <Key>
+      <PropertyRef Name="id_typeUser" />
+    </Key>
+    <Property Name="id_typeUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="typeUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tb_login" Relationship="Self.FK_R_1" FromRole="tb_typeUser" ToRole="tb_login" />
+  </EntityType>
+  <EntityType Name="td_itens_shop">
+    <Key>
+      <PropertyRef Name="id_itens" />
+    </Key>
+    <Property Name="id_itens" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_products" Type="Int32" Nullable="false" />
+    <Property Name="id_shop" Type="Int32" Nullable="false" />
+    <Property Name="amount" Type="Int32" />
+    <Property Name="total" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="weight_total" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="discount_total" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="unit_price_rules" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="rules" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tb_shop" Relationship="Self.FK_td_itens_shop_tb_shop" FromRole="td_itens_shop" ToRole="tb_shop" />
+    <NavigationProperty Name="td_Products" Relationship="Self.FK_td_itens_shop_td_Products" FromRole="td_itens_shop" ToRole="td_Products" />
+  </EntityType>
+  <EntityType Name="td_Products">
+    <Key>
+      <PropertyRef Name="id_products" />
+    </Key>
+    <Property Name="id_products" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="flavour" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="weight" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="price" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="id_status" Type="Int32" Nullable="false" />
+    <Property Name="picture" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="id_user_cadm" Type="Int32" />
+    <Property Name="ts_user_cadm" Type="DateTime" Precision="3" />
+    <Property Name="id_user_manu" Type="Int32" />
+    <Property Name="ts_user_manu" Type="DateTime" Precision="3" />
+    <Property Name="fl_active" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="tb_roles_products" Relationship="Self.FK_R_5_" FromRole="td_Products" ToRole="tb_roles_products" />
+    <NavigationProperty Name="td_itens_shop" Relationship="Self.FK_td_itens_shop_td_Products" FromRole="td_Products" ToRole="td_itens_shop" />
+    <Property Name="id_brands" Type="Int32" />
+    <NavigationProperty Name="td_brands" Relationship="getacai_Model.FK_td_Products_td_brands" FromRole="td_Products" ToRole="td_brands" />
+  </EntityType>
+  <Association Name="FK_R_6">
+    <End Role="tb_business" Type="Self.tb_business" Multiplicity="0..1" />
+    <End Role="tb_partners" Type="Self.tb_partners" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_business">
+        <PropertyRef Name="id_business" />
+      </Principal>
+      <Dependent Role="tb_partners">
+        <PropertyRef Name="id_business" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_states_tb_country">
+    <End Role="tb_country" Type="Self.tb_country" Multiplicity="1" />
+    <End Role="tb_states" Type="Self.tb_states" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_country">
+        <PropertyRef Name="id_country" />
+      </Principal>
+      <Dependent Role="tb_states">
+        <PropertyRef Name="id_country" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_R_2">
+    <End Role="tb_status" Type="Self.tb_status" Multiplicity="0..1" />
+    <End Role="tb_events" Type="Self.tb_events" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_status">
+        <PropertyRef Name="id_status" />
+      </Principal>
+      <Dependent Role="tb_events">
+        <PropertyRef Name="id_status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_grupo_shipping_tb_grupo_shipping">
+    <End Role="tb_states" Type="Self.tb_states" Multiplicity="1" />
+    <End Role="tb_grupo_shipping" Type="Self.tb_grupo_shipping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_states">
+        <PropertyRef Name="id_state" />
+      </Principal>
+      <Dependent Role="tb_grupo_shipping">
+        <PropertyRef Name="id_state" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_grupo_shipping_tb_states">
+    <End Role="tb_shipping" Type="Self.tb_shipping" Multiplicity="1" />
+    <End Role="tb_grupo_shipping" Type="Self.tb_grupo_shipping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_shipping">
+        <PropertyRef Name="id_shipping" />
+      </Principal>
+      <Dependent Role="tb_grupo_shipping">
+        <PropertyRef Name="id_shipping" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_R_1">
+    <End Role="tb_typeUser" Type="Self.tb_typeUser" Multiplicity="0..1" />
+    <End Role="tb_login" Type="Self.tb_login" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_typeUser">
+        <PropertyRef Name="id_typeUser" />
+      </Principal>
+      <Dependent Role="tb_login">
+        <PropertyRef Name="id_typeUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_R_5">
+    <End Role="tb_status" Type="Self.tb_status" Multiplicity="0..1" />
+    <End Role="tb_newPost" Type="Self.tb_newPost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_status">
+        <PropertyRef Name="id_status" />
+      </Principal>
+      <Dependent Role="tb_newPost">
+        <PropertyRef Name="id_status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_R_7">
+    <End Role="tb_statusPartners" Type="Self.tb_statusPartners" Multiplicity="0..1" />
+    <End Role="tb_partners" Type="Self.tb_partners" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_statusPartners">
+        <PropertyRef Name="id_statusPartners" />
+      </Principal>
+      <Dependent Role="tb_partners">
+        <PropertyRef Name="id_statusPartners" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_partners_tb_states">
+    <End Role="tb_states" Type="Self.tb_states" Multiplicity="0..1" />
+    <End Role="tb_partners" Type="Self.tb_partners" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_states">
+        <PropertyRef Name="id_state" />
+      </Principal>
+      <Dependent Role="tb_partners">
+        <PropertyRef Name="id_state" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_shop_tb_partners">
+    <End Role="tb_partners" Type="Self.tb_partners" Multiplicity="1" />
+    <End Role="tb_shop" Type="Self.tb_shop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_partners">
+        <PropertyRef Name="id_partners" />
+      </Principal>
+      <Dependent Role="tb_shop">
+        <PropertyRef Name="id_partners" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_R_4">
+    <End Role="tb_status" Type="Self.tb_status" Multiplicity="0..1" />
+    <End Role="tb_recipes" Type="Self.tb_recipes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_status">
+        <PropertyRef Name="id_status" />
+      </Principal>
+      <Dependent Role="tb_recipes">
+        <PropertyRef Name="id_status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_R_5_">
+    <End Role="td_Products" Type="Self.td_Products" Multiplicity="1" />
+    <End Role="tb_roles_products" Type="Self.tb_roles_products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="td_Products">
+        <PropertyRef Name="id_products" />
+      </Principal>
+      <Dependent Role="tb_roles_products">
+        <PropertyRef Name="id_products" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_R_6_">
+    <End Role="tb_status_roles" Type="Self.tb_status_roles" Multiplicity="1" />
+    <End Role="tb_roles_products" Type="Self.tb_roles_products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_status_roles">
+        <PropertyRef Name="id_status" />
+      </Principal>
+      <Dependent Role="tb_roles_products">
+        <PropertyRef Name="id_status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_shop_tb_status_shop">
+    <End Role="tb_status_shop" Type="Self.tb_status_shop" Multiplicity="1" />
+    <End Role="tb_shop" Type="Self.tb_shop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_status_shop">
+        <PropertyRef Name="id_status" />
+      </Principal>
+      <Dependent Role="tb_shop">
+        <PropertyRef Name="id_status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_td_itens_shop_tb_shop">
+    <End Role="tb_shop" Type="Self.tb_shop" Multiplicity="1" />
+    <End Role="td_itens_shop" Type="Self.td_itens_shop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_shop">
+        <PropertyRef Name="id_shop" />
+      </Principal>
+      <Dependent Role="td_itens_shop">
+        <PropertyRef Name="id_shop" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_td_itens_shop_td_Products">
+    <End Role="td_Products" Type="Self.td_Products" Multiplicity="1" />
+    <End Role="td_itens_shop" Type="Self.td_itens_shop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="td_Products">
+        <PropertyRef Name="id_products" />
+      </Principal>
+      <Dependent Role="td_itens_shop">
+        <PropertyRef Name="id_products" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="frootyacai_siteEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tb_about" EntityType="Self.tb_about" />
+    <EntitySet Name="tb_business" EntityType="Self.tb_business" />
+    <EntitySet Name="tb_country" EntityType="Self.tb_country" />
+    <EntitySet Name="tb_events" EntityType="Self.tb_events" />
+    <EntitySet Name="tb_grupo_shipping" EntityType="Self.tb_grupo_shipping" />
+    <EntitySet Name="tb_launcher" EntityType="Self.tb_launcher" />
+    <EntitySet Name="tb_location" EntityType="Self.tb_location" />
+    <EntitySet Name="tb_login" EntityType="Self.tb_login" />
+    <EntitySet Name="tb_newPost" EntityType="Self.tb_newPost" />
+    <EntitySet Name="tb_partners" EntityType="Self.tb_partners" />
+    <EntitySet Name="tb_recipes" EntityType="Self.tb_recipes" />
+    <EntitySet Name="tb_roles_products" EntityType="Self.tb_roles_products" />
+    <EntitySet Name="tb_rules" EntityType="Self.tb_rules" />
+    <EntitySet Name="tb_shipping" EntityType="Self.tb_shipping" />
+    <EntitySet Name="tb_shop" EntityType="Self.tb_shop" />
+    <EntitySet Name="tb_states" EntityType="Self.tb_states" />
+    <EntitySet Name="tb_status" EntityType="Self.tb_status" />
+    <EntitySet Name="tb_status_products" EntityType="Self.tb_status_products" />
+    <EntitySet Name="tb_status_roles" EntityType="Self.tb_status_roles" />
+    <EntitySet Name="tb_status_shop" EntityType="Self.tb_status_shop" />
+    <EntitySet Name="tb_statusPartners" EntityType="Self.tb_statusPartners" />
+    <EntitySet Name="tb_typeUser" EntityType="Self.tb_typeUser" />
+    <EntitySet Name="td_itens_shop" EntityType="Self.td_itens_shop" />
+    <EntitySet Name="td_Products" EntityType="Self.td_Products" />
+    <AssociationSet Name="FK_R_6" Association="Self.FK_R_6">
+      <End Role="tb_business" EntitySet="tb_business" />
+      <End Role="tb_partners" EntitySet="tb_partners" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_states_tb_country" Association="Self.FK_tb_states_tb_country">
+      <End Role="tb_country" EntitySet="tb_country" />
+      <End Role="tb_states" EntitySet="tb_states" />
+    </AssociationSet>
+    <AssociationSet Name="FK_R_2" Association="Self.FK_R_2">
+      <End Role="tb_status" EntitySet="tb_status" />
+      <End Role="tb_events" EntitySet="tb_events" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_grupo_shipping_tb_grupo_shipping" Association="Self.FK_tb_grupo_shipping_tb_grupo_shipping">
+      <End Role="tb_states" EntitySet="tb_states" />
+      <End Role="tb_grupo_shipping" EntitySet="tb_grupo_shipping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_grupo_shipping_tb_states" Association="Self.FK_tb_grupo_shipping_tb_states">
+      <End Role="tb_shipping" EntitySet="tb_shipping" />
+      <End Role="tb_grupo_shipping" EntitySet="tb_grupo_shipping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_R_1" Association="Self.FK_R_1">
+      <End Role="tb_typeUser" EntitySet="tb_typeUser" />
+      <End Role="tb_login" EntitySet="tb_login" />
+    </AssociationSet>
+    <AssociationSet Name="FK_R_5" Association="Self.FK_R_5">
+      <End Role="tb_status" EntitySet="tb_status" />
+      <End Role="tb_newPost" EntitySet="tb_newPost" />
+    </AssociationSet>
+    <AssociationSet Name="FK_R_7" Association="Self.FK_R_7">
+      <End Role="tb_statusPartners" EntitySet="tb_statusPartners" />
+      <End Role="tb_partners" EntitySet="tb_partners" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_partners_tb_states" Association="Self.FK_tb_partners_tb_states">
+      <End Role="tb_states" EntitySet="tb_states" />
+      <End Role="tb_partners" EntitySet="tb_partners" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_shop_tb_partners" Association="Self.FK_tb_shop_tb_partners">
+      <End Role="tb_partners" EntitySet="tb_partners" />
+      <End Role="tb_shop" EntitySet="tb_shop" />
+    </AssociationSet>
+    <AssociationSet Name="FK_R_4" Association="Self.FK_R_4">
+      <End Role="tb_status" EntitySet="tb_status" />
+      <End Role="tb_recipes" EntitySet="tb_recipes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_R_5_" Association="Self.FK_R_5_">
+      <End Role="td_Products" EntitySet="td_Products" />
+      <End Role="tb_roles_products" EntitySet="tb_roles_products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_R_6_" Association="Self.FK_R_6_">
+      <End Role="tb_status_roles" EntitySet="tb_status_roles" />
+      <End Role="tb_roles_products" EntitySet="tb_roles_products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_shop_tb_status_shop" Association="Self.FK_tb_shop_tb_status_shop">
+      <End Role="tb_status_shop" EntitySet="tb_status_shop" />
+      <End Role="tb_shop" EntitySet="tb_shop" />
+    </AssociationSet>
+    <AssociationSet Name="FK_td_itens_shop_tb_shop" Association="Self.FK_td_itens_shop_tb_shop">
+      <End Role="tb_shop" EntitySet="tb_shop" />
+      <End Role="td_itens_shop" EntitySet="td_itens_shop" />
+    </AssociationSet>
+    <AssociationSet Name="FK_td_itens_shop_td_Products" Association="Self.FK_td_itens_shop_td_Products">
+      <End Role="td_Products" EntitySet="td_Products" />
+      <End Role="td_itens_shop" EntitySet="td_itens_shop" />
+    </AssociationSet>
+    <EntitySet Name="td_brands" EntityType="getacai_Model.td_brands" />
+    <AssociationSet Name="FK_td_Products_td_brands" Association="getacai_Model.FK_td_Products_td_brands">
+      <End Role="td_brands" EntitySet="td_brands" />
+      <End Role="td_Products" EntitySet="td_Products" />
+    </AssociationSet>
+    <EntitySet Name="tb_about_goodie_time" EntityType="getacai_Model.tb_about_goodie_time" />
+  </EntityContainer>
+  <EntityType Name="td_brands">
+    <Key>
+      <PropertyRef Name="id_brands" />
+    </Key>
+    <Property Name="id_brands" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="LogoTipoImgUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PosterImgUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="td_Products" Relationship="getacai_Model.FK_td_Products_td_brands" FromRole="td_brands" ToRole="td_Products" />
+    <Property Name="fl_active" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="url" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_td_Products_td_brands">
+    <End Type="getacai_Model.td_brands" Role="td_brands" Multiplicity="0..1" />
+    <End Type="getacai_Model.td_Products" Role="td_Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="td_brands">
+        <PropertyRef Name="id_brands" />
+      </Principal>
+      <Dependent Role="td_Products">
+        <PropertyRef Name="id_brands" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tb_about_goodie_time">
+    <Key>
+      <PropertyRef Name="id_About" />
+    </Key>
+    <Property Name="id_About" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="aba" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="url" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>
